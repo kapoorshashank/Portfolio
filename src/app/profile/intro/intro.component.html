@@ -1,0 +1,137 @@
+<div class="profile-page">
+    <div class="wrapper">
+        <div class="page-header page-header-small"  [ngClass]="{'page-header-small-mob': isMobile}" filter-color="orange">
+        <!-- <div  [ngClass]="{'page-header page-header-small': !isMobile,  'page-header page-header-small-mob' : isMobile}" filter-color="orange"> -->
+            <div class="page-header-image" data-parallax="true"
+                style="background-image: url('assets/images/bgImg.jpg');">
+            </div>
+
+            <div class="container">
+                <div [ngClass]="{'introClass': !isMobile,  'introClassMob' : isMobile}"
+                class="introClass">
+                    <!-- <div class="profile-image">
+                    <a href="#">
+                        <img class="bitmoji" src="/assets/images/bitmoji.png"  alt="image">
+                         <img src="assets/images/profile.JPG" alt="Image" /> 
+                    </a>
+                </div> -->
+
+                    <div *ngIf="show" [@fadeInOut-1] class="h2 title">Shashank Kapoor </div>
+                    <p [ngClass]="{'resClass': !isMobile,  'resClassMob' : isMobile}" *ngIf="show" [@fadeInOut-1] class="category text-white">Full Stack Developer</p>
+                    <a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in"
+                        data-aos-anchor="data-aos-anchor">Contact</a>
+                    <!-- <a class="btn btn-primary" target="_blank" data-aos="zoom-in" data-aos-anchor="data-aos-anchor" (click)="SaveDemo()">Download CV</a> -->
+                    <!-- <a class="btn btn-primary" target="_blank" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a> -->
+                    <div [ngClass]="{'typeClass': !isMobile,  'typeClassMob' : isMobile}"> 
+                        <!-- <a class="btn btn-primary" (click) = "openBracket('()')">Resume</a> -->
+                        <a class="btn btn-primary" target="_blank" data-aos="zoom-in"
+                            data-aos-anchor="data-aos-anchor" href="/assets/pdf/Shashank_Kapoor_2k21.pdf"
+                            download="SKResume">Resume</a>
+                    </div>
+
+
+
+
+               
+               
+                     </div>
+              
+                <div style="padding-right: 7%;
+                font-size: 0.5rem;
+                padding-top: 21%;">
+                    <span class="tw" #tw2> </span>
+                    <span #tw3>
+
+                    </span>
+
+                    <h1 class="tw" #tw></h1>
+                    <span class="ts" #ts2> </span>
+                    <span #ts3>
+
+                    </span>
+
+                    <h1 class="ts" #ts></h1>
+                </div>
+                <!-- <div>
+                    <span class="tw" #tw2> </span><span #tw3></span>`   
+                    <h1 class="tw" #tw></h1>
+                </div> -->
+
+                <div *ngIf="isMobile === false" class="content-right">
+
+                    <div class="button-container">
+                        <div>
+                            <a class="btn btn-default btn-round btn-lg btn-icon"
+                                href="https://www.linkedin.com/in/kapoorshashanksk/" target="_blank" rel="tooltip"
+                                title="Find me on Linkedin">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                        <div>
+                            <!-- <br> -->
+                            <a class="btn btn-default btn-round btn-lg btn-icon" href="https://twitter.com/kashshaa"
+                                target="_blank" rel="tooltip" title="Find me on Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </div>
+                        <!-- <br> -->
+                        <div>
+                            <a class="btn btn-default btn-round btn-lg btn-icon"
+                                href="https://www.instagram.com/__camphor__" target="_blank" rel="tooltip"
+                                title="Find me on Instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div> <svg class="arrows"><a href="#skills"> 
+                    <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                    <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                    <path class="a3" d="M0 40 L30 72 L60 40"></path>
+                </a>
+                </svg></div>
+            </div>
+
+
+            <div *ngIf="isMobile === true" class="section">
+
+                <div class="container">
+
+                    <div class="button-container row">
+                        <div class="col-xs-3">
+                            <a class="btn btn-default btn-round btn-lg btn-icon"
+                                href="https://www.linkedin.com/kapoorshashanksk/" target="_blank" rel="tooltip"
+                                title="Find me on Linkedin">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                        <div class="col-xs-3">
+                            <!-- <br> -->
+                            <a class="btn btn-default btn-round btn-lg btn-icon" href="https://twitter.com/kashshaa"
+                                target="_blank" rel="tooltip" title="Find me on Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </div>
+                        <!-- <br> -->
+                        <div class="col-xs-3">
+                            <a class="btn btn-default btn-round btn-lg btn-icon"
+                                href="https://www.instagram.com/__camphor__" target="_blank" rel="tooltip"
+                                title="Find me on Instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="section"> -->
+
+            <!-- </div> -->
+        </div>
+        <!-- <div> <a href="#skills">click me<svg width="70" height="55" viewBox="-2.5 -5 75 60" preserveAspectRatio="none">
+            <path d="M0,0 l35,50 l35,-50" fill="none" stroke="black" stroke-linecap="round" stroke-width="5" />
+          </svg></a></div> -->
+       
+    </div>
+</div>
