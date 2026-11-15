@@ -2,37 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="theme-color" content="#faf5ec">
+<meta name="theme-color" content="#f8f6f2">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shashank Kapoor, AI Full Stack Developer</title>
 <meta name="description" content="Shashank Kapoor, AI Full Stack Developer with 8+ years: AI agents, RAG, LangGraph, MCP, Python/FastAPI, React/Angular, Docker, Kubernetes and AWS.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500..700&family=Figtree:wght@400..800&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..800&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #faf5ec;
-  --surface: #fffdf8;
-  --ink: #211c18;
-  --muted: #6b625a;
-  --line: #e7ddcf;
-  --edge: #d3c5b1;
-  --accent: #ff5b35;
+  --bg: #f8f6f2;
+  --surface: #ffffff;
+  --ink: #1c1b19;
+  --muted: #5f5b55;
+  --line: #e6e2da;
+  --edge: #d3cdc2;
+  --accent: #b9472a;
   --accent-ink: #ffffff;
-  --sun: #ffc53d;
-  --sky: #4a7fd6;
-  --sk: #efe6d8;
-  --k-ai: #ff5b35;
-  --k-fe: #211c18;
-  --k-be: #4a7fd6;
-  --k-tl: #d99a00;
-  --shadow: 4px 4px 0 var(--ink);
-  --shadow-lg: 7px 7px 0 var(--ink);
-  --radius: 16px;
+  --tint: #f7ebe5;
+  --sk: #eeeae3;
+  --k-ai: #b9472a;
+  --k-fe: #1c1b19;
+  --k-be: #3d6fb5;
+  --k-tl: #a87b10;
+  --shadow: 0 1px 2px rgba(28,27,25,.05), 0 10px 30px -18px rgba(28,27,25,.25);
+  --shadow-lg: 0 2px 4px rgba(28,27,25,.06), 0 18px 40px -20px rgba(28,27,25,.35);
+  --radius: 14px;
   --display: "Fraunces", Georgia, "Times New Roman", serif;
   --body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --hand: "Caveat", "Comic Sans MS", cursive;
-  --blend: multiply;
   color-scheme: light;
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
@@ -40,10 +37,11 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #1a1714; --surface: #24201c; --ink: #f5eee4; --muted: #b3a898; --line: #3a332c; --edge: #4d443a;
-    --accent: #ff7a55; --accent-ink: #1a1714; --sun: #ffcf5c; --sky: #7aa5ef; --sk: #2a2520;
-    --k-ai: #ff7a55; --k-fe: #f5eee4; --k-be: #7aa5ef; --k-tl: #ffc53d;
-    --blend: screen;
+    --bg: #161514; --surface: #1f1e1c; --ink: #f1ede6; --muted: #aaa49a; --line: #34312d; --edge: #47433d;
+    --accent: #e8795a; --accent-ink: #161514; --tint: #2b211d; --sk: #262421;
+    --k-ai: #e8795a; --k-fe: #f1ede6; --k-be: #7aa5ef; --k-tl: #d9b04a;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.6);
+    --shadow-lg: 0 2px 4px rgba(0,0,0,.35), 0 18px 40px -20px rgba(0,0,0,.7);
     color-scheme: dark;
   }
 }
@@ -51,271 +49,231 @@
 html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 84px); scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .5;
-  background-image: radial-gradient(var(--line) 1px, transparent 1.2px); background-size: 22px 22px; }
-#root { position: relative; z-index: 1; }
-p, h1, h2, h3, ul, ol { margin: 0; }
+p, h1, h2, h3, ul, ol, dl, dd { margin: 0; }
 a { color: var(--accent); }
 a:hover { color: var(--ink); }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
-.wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding-inline: clamp(1.1rem, 4vw, 2.5rem); }
+.wrap { width: 100%; max-width: 1220px; margin: 0 auto; padding-inline: clamp(1.1rem, 4vw, 2.5rem); }
 .skip { position: absolute; left: -9999px; top: 0; }
 .skip:focus { left: 1rem; top: 1rem; z-index: 50; background: var(--surface); padding: .6rem 1rem; }
-.hand { font-family: var(--hand); font-weight: 600; }
-
-/* Cursor blob */
-.blob { position: fixed; left: 0; top: 0; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: var(--accent); opacity: .35; mix-blend-mode: var(--blend); pointer-events: none; z-index: 90; transition: width .25s ease, height .25s ease, margin .25s ease, opacity .25s ease; will-change: transform; }
-.blob.big { width: 64px; height: 64px; margin: -32px 0 0 -32px; opacity: .22; }
-.blob.hide { opacity: 0; }
 
 /* Top bar */
-.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 92%, transparent); border-bottom: 2px solid var(--ink); }
-.topbar-inner { display: flex; align-items: center; gap: 1.5rem; min-height: 66px; }
-.wordmark { font-family: var(--display); font-weight: 800; font-size: 1.35rem; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; font-style: italic; }
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 94%, transparent); border-bottom: 1px solid var(--line); }
+.topbar-inner { display: flex; align-items: center; gap: 1.5rem; min-height: 64px; }
+.wordmark { font-family: var(--display); font-weight: 700; font-size: 1.2rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
 .wordmark b { color: var(--accent); }
 .nav { display: flex; gap: .25rem; margin-left: auto; }
-.nav a { color: var(--ink); text-decoration: none; padding: .55rem .8rem; min-height: 44px; display: inline-flex; align-items: center; font-weight: 600; border-radius: 999px; }
-.nav a:hover { background: var(--sun); color: #211c18; }
+.nav a { color: var(--muted); text-decoration: none; padding: .55rem .8rem; min-height: 44px; display: inline-flex; align-items: center; font-weight: 600; font-size: .98rem; }
+.nav a:hover { color: var(--ink); }
 @media (max-width: 600px) { .nav { display: none; } .topbar-inner .btn-small { margin-left: auto; } }
 
 /* Buttons */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 50px; padding: 0 1.4rem; border-radius: 999px; font: 700 1rem/1 var(--body); text-decoration: none; cursor: pointer; border: 2px solid var(--ink); box-shadow: var(--shadow); transition: box-shadow .2s ease, background .2s ease; will-change: transform; }
-.btn:hover { box-shadow: var(--shadow-lg); }
-.btn:active { box-shadow: 1px 1px 0 var(--ink); }
-.btn-small { min-height: 44px; padding: 0 1.1rem; font-size: .95rem; box-shadow: 3px 3px 0 var(--ink); }
-.btn-primary { background: var(--accent); color: var(--accent-ink); }
-.btn-primary:hover { color: var(--accent-ink); }
-.btn-ghost { background: var(--surface); color: var(--ink); }
-.btn-ghost:hover { background: var(--sun); color: #211c18; }
-.cta-row { display: flex; flex-wrap: wrap; gap: .9rem; }
-.magnetic { transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .2s ease, background .2s ease; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px; padding: 0 1.3rem; border-radius: 10px; font: 600 1rem/1 var(--body); text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn-small { min-height: 42px; padding: 0 1rem; font-size: .95rem; }
+.btn-primary { background: var(--ink); color: var(--bg); }
+.btn-primary:hover { background: var(--accent); color: var(--accent-ink); }
+.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--edge); }
+.btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+.cta-row { display: flex; flex-wrap: wrap; gap: .75rem; }
 
-/* Bouncy letters */
+/* Name: letters rise in once after the loader */
 .bouncy .word { display: inline-block; white-space: nowrap; }
-.bouncy .ch { display: inline-block; transform-origin: 50% 90%; }
-html:not(.is-ready) .rise .ch { opacity: 0; transform: translateY(.5em); }
-html.is-ready .rise .ch { animation: rise .7s cubic-bezier(.2,.9,.25,1.25) both; animation-delay: calc(var(--i) * 38ms + 80ms); }
-.bouncy .ch.boing { animation: boing .55s cubic-bezier(.3,.7,.3,1.4) both !important; color: var(--accent); }
-@keyframes rise { from { opacity: 0; transform: translateY(.55em) rotate(6deg); } to { opacity: 1; transform: none; } }
-@keyframes boing { 0% { transform: none; } 30% { transform: translateY(-.2em) rotate(-8deg) scale(1.08); } 60% { transform: translateY(.05em) rotate(3deg); } 100% { transform: none; } }
+.bouncy .ch { display: inline-block; }
+html:not(.is-ready) .rise .ch { opacity: 0; transform: translateY(.35em); }
+html.is-ready .rise .ch { animation: rise .7s cubic-bezier(.2,.8,.2,1) both; animation-delay: calc(var(--i) * 28ms + 60ms); }
+html.is-ready .rise .ch.risen { animation: none; opacity: 1; transform: none; }
+@keyframes rise { from { opacity: 0; transform: translateY(.35em); } to { opacity: 1; transform: none; } }
 
 /* Hero */
 .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 5vw, 4rem); padding-top: clamp(2.5rem, 6vw, 4.5rem); padding-bottom: clamp(2.5rem, 5vw, 4rem); align-items: start; }
 @media (max-width: 980px) { .hero { grid-template-columns: minmax(0, 1fr); } }
-.hero-copy { display: flex; flex-direction: column; gap: 1.35rem; position: relative; }
-.hello { font: 600 1.25rem/1.2 var(--body); display: flex; align-items: center; gap: .5rem; }
-.wave { display: inline-block; transform-origin: 70% 75%; animation: wave 2.4s ease-in-out 1s infinite; font-size: 1.5rem; }
-@keyframes wave { 0%, 60%, 100% { transform: rotate(0); } 10%, 30% { transform: rotate(16deg); } 20% { transform: rotate(-8deg); } 40% { transform: rotate(-4deg); } 50% { transform: rotate(10deg); } }
-.name { font-family: var(--display); font-weight: 800; font-size: clamp(3.4rem, 8.4vw, 6.6rem); line-height: .92; letter-spacing: -0.035em; cursor: default; }
-.role { font-family: var(--display); font-weight: 500; font-size: clamp(1.45rem, 2.6vw, 1.95rem); line-height: 1.2; letter-spacing: -0.01em; }
-.rotator { display: inline-block; color: var(--accent); font-style: italic; font-weight: 700; position: relative; }
-.rotator::after { content: ""; position: absolute; left: 0; right: 0; bottom: -.08em; height: .14em; background: var(--sun); z-index: -1; border-radius: 4px; transform: skewX(-12deg); }
-.rot-word { display: inline-block; animation: flip .5s cubic-bezier(.2,.8,.2,1.2) both; }
-@keyframes flip { from { opacity: 0; transform: translateY(.6em) rotate(-4deg); } to { opacity: 1; transform: none; } }
+.hero-copy { display: flex; flex-direction: column; gap: 1.3rem; }
+.hello { font: 600 .9rem/1 var(--body); color: var(--accent); text-transform: uppercase; letter-spacing: .12em; }
+.name { font-family: var(--display); font-weight: 700; font-size: clamp(3.2rem, 7.6vw, 6rem); line-height: .95; letter-spacing: -0.03em; margin-top: .35rem; }
+.role { font-family: var(--display); font-weight: 400; font-size: clamp(1.4rem, 2.5vw, 1.85rem); line-height: 1.25; letter-spacing: -0.01em; }
+.rotator { display: inline-block; color: var(--accent); font-style: italic; font-weight: 600; }
+.rot-word { display: inline-block; animation: fade-up .45s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes fade-up { from { opacity: 0; transform: translateY(.35em); } to { opacity: 1; transform: none; } }
 .sub { color: var(--muted); font-size: 1.05rem; }
+.sub strong { color: var(--ink); }
 
-/* 8+ years sticker */
-.name-l2 { white-space: nowrap; }
-.years { --s: clamp(92px, 10.5vw, 128px); position: relative; display: inline-grid; place-items: center; width: var(--s); height: var(--s); vertical-align: middle; margin-left: .12em; margin-top: -.2em; font-size: 1rem; letter-spacing: normal; cursor: default; }
-.years-disc { position: absolute; inset: calc(var(--s) * .12); border-radius: 50%; background: var(--sun); border: 2px solid #211c18; box-shadow: 3px 3px 0 #211c18; display: grid; place-items: center; text-align: center; color: #211c18; transform: rotate(-8deg); transition: transform .3s cubic-bezier(.3,.7,.3,1.4); }
-.years:hover .years-disc { transform: rotate(6deg) scale(1.08); }
-.years-num { font: 800 calc(var(--s) * .3)/1 var(--display); letter-spacing: -0.04em; }
-.years-num sup { font-size: .55em; vertical-align: .6em; margin-left: .02em; }
-.years-lbl { font: 800 calc(var(--s) * .072)/1.1 var(--body); text-transform: uppercase; letter-spacing: .08em; margin-top: .15em; }
-.years-ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 18s linear infinite; }
-.years-ring text { font: 700 9px var(--body); text-transform: uppercase; fill: var(--ink); }
-@keyframes spin { to { transform: rotate(360deg); } }
+/* Stats (8+ years) */
+.stats { display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stat { padding: 1rem 1.4rem 1rem 0; margin-right: 1.4rem; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: .25rem; }
+.stat:last-child { border-right: 0; margin-right: 0; padding-right: 0; }
+.stat dt { font: 700 clamp(2rem, 4vw, 2.6rem)/1 var(--display); letter-spacing: -0.03em; color: var(--ink); }
+.stat:first-child dt { color: var(--accent); }
+.stat dd { font-size: .86rem; color: var(--muted); line-height: 1.35; max-width: 14ch; }
+.stat-wide dt { font-size: clamp(1.25rem, 2.4vw, 1.5rem); padding-top: .35rem; }
+.stat-wide dd { max-width: none; }
+@media (max-width: 460px) { .stats { grid-template-columns: auto minmax(0, 1fr); } .stat-wide { grid-column: 1 / -1; border-top: 1px solid var(--line); border-right: 0; margin-right: 0; } .stat:nth-child(2) { border-right: 0; margin-right: 0; } }
 
-/* Handwritten note */
-.note { display: flex; align-items: flex-end; gap: .25rem; color: var(--accent); font-family: var(--hand); font-weight: 600; font-size: 1.45rem; line-height: 1.1; transform: rotate(-2deg); margin: -.25rem 0 -.6rem .25rem; }
-.note svg { width: 64px; height: 38px; flex: none; overflow: visible; }
-.note path { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 140; stroke-dashoffset: 140; }
-html.is-ready .note path { animation: draw 1.1s ease .9s forwards; }
-@keyframes draw { to { stroke-dashoffset: 0; } }
-
-/* Stickers */
+/* Tags */
 .lede-hl { display: flex; flex-direction: column; gap: 1rem; }
-.hl-label { font: 700 .8rem/1 var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .6rem; }
-.hl-tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
-.hl-tags li { font-weight: 700; font-size: .95rem; line-height: 1.2; padding: .45rem .85rem; border-radius: 999px; border: 2px solid var(--ink); background: var(--surface); color: var(--ink); transform: rotate(var(--r, 0deg)); transition: transform .25s cubic-bezier(.3,.7,.3,1.4), box-shadow .2s; box-shadow: 2px 2px 0 var(--ink); cursor: default; }
-.hl-tags li:hover { transform: rotate(0) translateY(-3px) scale(1.06); box-shadow: 4px 4px 0 var(--ink); }
-.hl-ai li { background: var(--accent); color: var(--accent-ink); }
+.hl-label { font: 600 .78rem/1 var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-bottom: .6rem; }
+.hl-tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .45rem; }
+.hl-tags li { font-weight: 600; font-size: .92rem; line-height: 1.2; padding: .42rem .75rem; border-radius: 8px; border: 1px solid var(--edge); background: var(--surface); color: var(--ink); transition: border-color .2s, transform .2s; }
+.hl-tags li:hover { border-color: var(--ink); transform: translateY(-1px); }
+.hl-ai li { background: var(--tint); color: var(--accent); border-color: color-mix(in srgb, var(--accent) 30%, transparent); }
+.hl-ai li:hover { border-color: var(--accent); }
 
 /* Skill space card */
-.space { background: var(--surface); border: 2px solid var(--ink); border-radius: 22px; overflow: hidden; box-shadow: var(--shadow-lg); }
+.space { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
 .space-head { padding: 1.5rem 1.5rem 0; display: flex; flex-direction: column; gap: .4rem; }
-.space-kicker { font-family: var(--hand); font-size: 1.35rem; color: var(--accent); line-height: 1; transform: rotate(-1.5deg); transform-origin: left; }
-.space-title { font-family: var(--display); font-weight: 700; font-size: clamp(1.4rem, 2.4vw, 1.85rem); letter-spacing: -0.02em; line-height: 1.15; }
-.space-sub { color: var(--muted); font-size: .98rem; max-width: 40rem; }
+.space-kicker { font: 600 .78rem/1 var(--body); color: var(--accent); text-transform: uppercase; letter-spacing: .1em; }
+.space-title { font-family: var(--display); font-weight: 600; font-size: clamp(1.35rem, 2.3vw, 1.7rem); letter-spacing: -0.015em; line-height: 1.2; }
+.space-sub { color: var(--muted); font-size: .97rem; max-width: 40rem; }
 .space-stage { position: relative; height: clamp(340px, 44vw, 460px); margin-top: .5rem; overflow: hidden; }
 .space-gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: pan-y; }
 .space-gl:active { cursor: grabbing; }
 .space-labels { position: absolute; inset: 0; pointer-events: none; }
 .space-fallback { position: absolute; inset: 0; display: grid; place-items: center; padding: 2rem; text-align: center; color: var(--muted); }
 .node-label, .cluster-label { position: absolute; left: 0; top: 0; white-space: nowrap; will-change: transform, opacity; }
-.node-label { font: 700 .8rem/1 var(--body); background: var(--surface); color: var(--ink); border: 2px solid var(--c); padding: .32rem .6rem; border-radius: 999px; opacity: 0; }
-.cluster-label { font: 700 1rem/1 var(--display); font-style: italic; letter-spacing: -0.01em; color: var(--ink); }
+.node-label { font: 600 .78rem/1 var(--body); background: var(--surface); color: var(--ink); border: 1.5px solid var(--c); padding: .3rem .55rem; border-radius: 6px; opacity: 0; }
+.cluster-label { font: 600 .95rem/1 var(--display); letter-spacing: -0.01em; color: var(--muted); }
 .cluster-label.c-ai { color: var(--accent); }
 .c-ai { --c: var(--k-ai); }
 .c-fe { --c: var(--k-fe); }
 .c-be { --c: var(--k-be); }
 .c-tl { --c: var(--k-tl); }
-.space-query { padding: 1.25rem 1.5rem 0; display: flex; flex-direction: column; gap: .75rem; border-top: 2px dashed var(--edge); }
-.q-label { font-weight: 700; font-size: .95rem; }
-#skill-q { width: 100%; min-height: 52px; padding: 0 1.1rem; border-radius: 999px; border: 2px solid var(--ink); background: var(--bg); color: var(--ink); font: 600 1.05rem var(--body); }
-#skill-q::placeholder { color: var(--muted); font-weight: 500; }
-#skill-q:focus-visible { border-color: var(--accent); outline-offset: 2px; }
-.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
-.chip { min-height: 44px; padding: 0 1rem; border-radius: 999px; border: 2px solid var(--ink); background: transparent; color: var(--ink); font: 700 .92rem var(--body); cursor: pointer; transition: transform .2s cubic-bezier(.3,.7,.3,1.4), background .2s; }
-.chip:hover { transform: translateY(-2px) rotate(-1deg); background: var(--sun); color: #211c18; }
-.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.space-query { padding: 1.25rem 1.5rem 0; display: flex; flex-direction: column; gap: .75rem; border-top: 1px solid var(--line); }
+.q-label { font-weight: 600; font-size: .92rem; }
+#skill-q { width: 100%; min-height: 50px; padding: 0 1rem; border-radius: 10px; border: 1px solid var(--edge); background: var(--bg); color: var(--ink); font: 500 1.02rem var(--body); }
+#skill-q::placeholder { color: var(--muted); }
+#skill-q:focus-visible { border-color: var(--accent); outline-offset: 1px; }
+.chips { display: flex; flex-wrap: wrap; gap: .45rem; }
+.chip { min-height: 42px; padding: 0 .95rem; border-radius: 8px; border: 1px solid var(--edge); background: transparent; color: var(--ink); font: 600 .9rem var(--body); cursor: pointer; transition: border-color .2s, background .2s; }
+.chip:hover { border-color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 .results { padding: 1.25rem 1.5rem 1.5rem; }
 .empty { color: var(--muted); }
 .result-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .25rem 1.5rem; }
 @media (max-width: 640px) { .result-list { grid-template-columns: minmax(0, 1fr); } }
-.result { display: flex; gap: .75rem; padding: .7rem 0; border-bottom: 1px solid var(--line); animation: pop .35s cubic-bezier(.2,.8,.2,1.2) both; }
-@keyframes pop { from { opacity: 0; transform: translateY(6px) scale(.98); } to { opacity: 1; transform: none; } }
-.dot { width: .75rem; height: .75rem; background: var(--c); flex: none; margin-top: .45rem; display: inline-block; }
+.result { display: flex; gap: .75rem; padding: .7rem 0; border-bottom: 1px solid var(--line); animation: fade-up .3s ease both; }
+.dot { width: .7rem; height: .7rem; background: var(--c); flex: none; margin-top: .45rem; display: inline-block; }
 .dot.c-ai { border-radius: 50%; }
 .dot.c-be { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
 .dot.c-tl { transform: rotate(45deg) scale(.82); }
-.r-name { font-weight: 800; display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; }
+.r-name { font-weight: 700; display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; }
 .r-cluster { font-weight: 500; font-size: .82rem; color: var(--muted); }
 .r-desc { color: var(--muted); font-size: .95rem; line-height: 1.5; }
-.r-where { font-size: .88rem; font-weight: 700; margin-top: .2rem; }
+.r-where { font-size: .88rem; font-weight: 600; margin-top: .2rem; }
+
+/* Cards */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(1.25rem, 3vw, 1.75rem); transition: box-shadow .3s ease, transform .3s ease; }
+.card:hover { box-shadow: var(--shadow-lg); }
+.card-kicker { display: inline-flex; align-items: center; gap: .5rem; font: 600 .78rem/1 var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
 
 /* Now + roles */
-.now-row { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.25rem, 3vw, 2rem); padding-bottom: 1rem; }
+.now-row { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.25rem, 3vw, 1.75rem); }
 @media (max-width: 860px) { .now-row { grid-template-columns: minmax(0, 1fr); } }
-.card { background: var(--surface); border: 2px solid var(--ink); border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(1.25rem, 3vw, 1.75rem); transition: transform .3s cubic-bezier(.3,.7,.3,1.3), box-shadow .3s; }
-.card:hover { transform: translate(-2px, -2px) rotate(var(--tilt, -.4deg)); box-shadow: var(--shadow-lg); }
-.card-kicker { display: inline-flex; align-items: center; gap: .5rem; font: 800 .8rem/1 var(--body); letter-spacing: .1em; text-transform: uppercase; background: var(--ink); color: var(--bg); padding: .4rem .7rem; border-radius: 999px; margin-bottom: 1rem; }
-.live-dot { width: .55rem; height: .55rem; border-radius: 50%; background: #3ddc84; box-shadow: 0 0 0 0 rgba(61,220,132,.6); animation: pulse 1.8s ease-out infinite; }
-@keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(61,220,132,0); } 100% { box-shadow: 0 0 0 0 rgba(61,220,132,0); } }
+.live-dot { width: .5rem; height: .5rem; border-radius: 50%; background: #2fa66a; box-shadow: 0 0 0 0 rgba(47,166,106,.5); animation: pulse 2s ease-out infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 7px rgba(47,166,106,0); } 100% { box-shadow: 0 0 0 0 rgba(47,166,106,0); } }
 .now-list { list-style: none; padding: 0; display: flex; flex-direction: column; }
-.now-list li { display: grid; grid-template-columns: 2rem 7.5rem minmax(0, 1fr); gap: .5rem; align-items: baseline; padding: .7rem 0; border-bottom: 2px dashed var(--line); }
-.now-list li:last-child { border-bottom: 0; }
-@media (max-width: 520px) { .now-list li { grid-template-columns: 1.8rem minmax(0, 1fr); } .now-list .now-v { grid-column: 2; } }
-.now-ico { font-size: 1.2rem; }
-.now-k { font-family: var(--hand); font-size: 1.35rem; color: var(--accent); line-height: 1; }
-.now-v { font-weight: 600; }
-.clock { font-variant-numeric: tabular-nums; font-weight: 800; }
-.clock .colon { animation: blink 1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: .2; } }
-.roles-card { --tilt: .5deg; background: var(--sun); color: #211c18; }
-.roles-card .card-kicker { background: #211c18; color: var(--sun); }
+.now-list li { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1rem; align-items: baseline; padding: .75rem 0; border-bottom: 1px solid var(--line); }
+.now-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+@media (max-width: 520px) { .now-list li { grid-template-columns: minmax(0, 1fr); gap: .15rem; } }
+.now-k { font: 600 .8rem/1.4 var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+.now-v { font-weight: 500; }
+.clock { font-variant-numeric: tabular-nums; font-weight: 700; }
+.clock .colon { animation: blink 2s steps(1) infinite; }
+@keyframes blink { 50% { opacity: .35; } }
+.roles-card { border-top: 3px solid var(--accent); }
 .role-list { list-style: none; padding: 0; counter-reset: r; }
-.role-list li { counter-increment: r; display: flex; align-items: baseline; gap: .75rem; padding: .55rem 0; border-bottom: 2px solid rgba(33,28,24,.15); font: 700 1.1rem/1.3 var(--body); }
-.role-list li:last-child { border-bottom: 0; }
-.role-list li::before { content: counter(r, decimal-leading-zero); font: 800 .85rem var(--display); font-style: italic; opacity: .6; }
-.role-list li:first-child { font-family: var(--display); font-size: 1.35rem; }
-
-/* Marquee */
-.marquee { margin-top: clamp(2.5rem, 6vw, 4.5rem); transform: rotate(-1.8deg); background: var(--accent); color: var(--accent-ink); border-block: 2px solid var(--ink); overflow: hidden; }
-.marquee-track { display: flex; width: max-content; animation: marq 38s linear infinite; }
-.marquee:hover .marquee-track { animation-play-state: paused; }
-.marquee span { font: 800 clamp(1.2rem, 2.6vw, 1.7rem)/1 var(--display); font-style: italic; padding: 1rem 0; white-space: nowrap; }
-.marquee span::after { content: "✦"; font-style: normal; margin: 0 1.25rem; color: var(--sun); }
-@keyframes marq { to { transform: translateX(-50%); } }
+.role-list li { counter-increment: r; display: flex; align-items: baseline; gap: .85rem; padding: .6rem 0; border-bottom: 1px solid var(--line); font: 600 1.05rem/1.3 var(--body); }
+.role-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.role-list li::before { content: counter(r, decimal-leading-zero); font: 600 .8rem var(--body); color: var(--muted); font-variant-numeric: tabular-nums; }
+.role-list li:first-child { font-family: var(--display); font-size: 1.3rem; color: var(--accent); }
 
 /* Sections */
 .section { padding-top: clamp(3.5rem, 8vw, 6rem); padding-bottom: clamp(1rem, 3vw, 2rem); }
-.section-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.25rem; margin-bottom: 2rem; }
-.section-title { font-family: var(--display); font-weight: 800; font-size: clamp(2.2rem, 4.6vw, 3.4rem); letter-spacing: -0.035em; line-height: 1; }
-.section-aside { font-family: var(--hand); font-size: 1.5rem; color: var(--accent); transform: rotate(-2deg); line-height: 1; }
+.section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1.25rem; margin-bottom: 1.75rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.section-title { font-family: var(--display); font-weight: 600; font-size: clamp(2rem, 4vw, 2.9rem); letter-spacing: -0.025em; line-height: 1; }
+.section-aside { color: var(--muted); font-size: .95rem; font-weight: 500; }
+.section-aside strong { color: var(--accent); }
 
 /* Reveal on scroll */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); transition-delay: var(--d, 0s); }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); transition-delay: var(--d, 0s); }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .wave, .years-ring, .marquee-track, .live-dot, .clock .colon { animation: none; }
-  html.is-ready .rise .ch, .bouncy .ch.boing, .rot-word, .result { animation: none !important; opacity: 1; transform: none; }
-  html.is-ready .note path { animation: none; stroke-dashoffset: 0; }
-  .card:hover, .hl-tags li:hover, .chip:hover { transform: none; }
+  .live-dot, .clock .colon { animation: none; }
+  html.is-ready .rise .ch, .rot-word, .result { animation: none !important; opacity: 1; transform: none; }
+  .btn:hover, .hl-tags li:hover { transform: none; }
 }
 
 /* Work */
-.timeline { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1.75rem; }
-.job { display: grid; grid-template-columns: minmax(0, 230px) minmax(0, 1fr); gap: clamp(1rem, 4vw, 2.5rem); }
-.job:nth-child(even) { --tilt: .4deg; }
+.timeline { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1.25rem; }
+.job { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: clamp(1rem, 4vw, 2.5rem); }
 @media (max-width: 760px) { .job { grid-template-columns: minmax(0, 1fr); gap: .75rem; } }
 .job-meta { display: flex; flex-direction: column; gap: .25rem; }
-.job-when { display: inline-block; align-self: flex-start; font: 800 .82rem/1 var(--body); letter-spacing: .04em; text-transform: uppercase; background: var(--sun); color: #211c18; padding: .4rem .65rem; border-radius: 999px; border: 2px solid #211c18; }
-.job-company { font-family: var(--display); font-weight: 800; font-size: 1.45rem; letter-spacing: -0.015em; margin-top: .5rem; }
-.job-team { color: var(--muted); font-size: .95rem; }
-.job-body { display: flex; flex-direction: column; gap: .9rem; max-width: 48rem; }
-.job-role { font-family: var(--display); font-weight: 700; font-size: clamp(1.4rem, 2.6vw, 1.85rem); letter-spacing: -0.02em; line-height: 1.15; }
-.job-title { color: var(--muted); margin-top: -.5rem; font-weight: 600; }
-.feature { border: 2px solid var(--ink); border-radius: 14px; padding: 1rem 1.2rem; background: var(--accent); color: var(--accent-ink); transform: rotate(-.8deg); box-shadow: 3px 3px 0 var(--ink); }
-.feature-name { font-family: var(--display); font-weight: 800; font-size: 1.25rem; display: flex; align-items: center; gap: .5rem; }
+.job-when { font: 600 .82rem/1.3 var(--body); letter-spacing: .04em; text-transform: uppercase; color: var(--accent); }
+.job-company { font-family: var(--display); font-weight: 600; font-size: 1.35rem; letter-spacing: -0.01em; margin-top: .25rem; }
+.job-team { color: var(--muted); font-size: .92rem; }
+.job-body { display: flex; flex-direction: column; gap: .85rem; max-width: 48rem; }
+.job-role { font-family: var(--display); font-weight: 600; font-size: clamp(1.35rem, 2.4vw, 1.7rem); letter-spacing: -0.015em; line-height: 1.2; }
+.job-title { color: var(--muted); margin-top: -.45rem; font-weight: 500; }
+.feature { border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: .9rem 1.1rem; background: var(--tint); }
+.feature-name { font-family: var(--display); font-weight: 600; font-size: 1.15rem; color: var(--accent); }
 .job-points { padding-left: 1.2rem; color: var(--muted); display: flex; flex-direction: column; gap: .35rem; }
 .job-points li::marker { color: var(--accent); }
 .tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
-.tags li { border: 2px solid var(--edge); border-radius: 999px; padding: .2rem .65rem; font-size: .86rem; font-weight: 700; }
-.award { font-weight: 700; font-size: .95rem; }
-.award::before { content: "🏆 "; }
+.tags li { border: 1px solid var(--edge); border-radius: 6px; padding: .18rem .55rem; font-size: .85rem; font-weight: 600; color: var(--muted); }
+.award { font-weight: 600; font-size: .93rem; }
 
 /* Skills */
-.skill-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; align-items: start; }
+.skill-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; align-items: start; }
 @media (max-width: 1080px) { .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .skill-grid { grid-template-columns: minmax(0, 1fr); } }
 .skill-col { padding: 1.25rem 1.25rem .5rem; }
-.skill-col:nth-child(2) { --tilt: .5deg; }
-.skill-col:nth-child(3) { --tilt: -.5deg; }
-.skill-col:nth-child(4) { --tilt: .4deg; }
-.skill-head { display: flex; align-items: center; gap: .55rem; font-family: var(--display); font-size: 1.2rem; font-weight: 800; padding-bottom: .75rem; border-bottom: 2px solid var(--ink); margin-bottom: .25rem; line-height: 1.2; }
+.skill-head { display: flex; align-items: center; gap: .55rem; font-family: var(--display); font-size: 1.12rem; font-weight: 600; padding-bottom: .75rem; border-bottom: 1px solid var(--line); margin-bottom: .25rem; line-height: 1.25; }
 .skill-head .dot { margin-top: 0; }
 .skill-list { list-style: none; padding: 0; }
-.skill-list li { padding: .65rem 0; border-bottom: 2px dashed var(--line); display: flex; flex-direction: column; }
+.skill-list li { padding: .62rem 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; }
 .skill-list li:last-child { border-bottom: 0; }
-.skill-list strong { display: flex; align-items: center; gap: .45rem; flex-wrap: wrap; font-weight: 800; }
-.skill-list span { color: var(--muted); font-size: .92rem; line-height: 1.45; }
-.key-badge { font-style: normal; color: var(--accent); font-size: 1rem; line-height: 1; }
+.skill-list strong { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; font-weight: 700; }
+.skill-list span { color: var(--muted); font-size: .9rem; line-height: 1.45; }
+.key-badge { font-style: normal; color: var(--accent); font-size: .9rem; line-height: 1; }
 
 /* Education */
-.two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 @media (max-width: 760px) { .two-col { grid-template-columns: minmax(0, 1fr); } }
-.two-col .section-title { font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-bottom: 1rem; }
-.edu-degree { font-weight: 800; font-size: 1.15rem; }
+.two-col .section-title { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 1rem; }
+.edu-degree { font-weight: 700; font-size: 1.1rem; }
 .edu-meta { color: var(--muted); }
 .plain-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .75rem; }
 
 /* Contact */
-.contact { margin-top: clamp(3.5rem, 8vw, 6rem); background: var(--ink); color: var(--bg); padding: clamp(3.5rem, 9vw, 7rem) 0; border-top: 2px solid var(--ink); position: relative; overflow: hidden; }
-.contact-inner { display: flex; flex-direction: column; gap: 1.5rem; position: relative; }
-.contact-title { font-family: var(--display); font-weight: 800; font-size: clamp(2.4rem, 7vw, 5.2rem); letter-spacing: -0.04em; line-height: .95; max-width: 14ch; cursor: default; }
-.contact-title .bouncy .ch.boing { color: var(--sun); }
-.contact-time { font-family: var(--hand); font-size: clamp(1.4rem, 3vw, 1.8rem); color: var(--sun); transform: rotate(-1.5deg); transform-origin: left; }
-.contact-email { font-family: var(--display); font-weight: 700; font-style: italic; font-size: clamp(1.2rem, 3.2vw, 2rem); color: var(--bg); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: .2em; text-decoration-thickness: 3px; overflow-wrap: anywhere; align-self: flex-start; }
-.contact-email:hover { color: var(--sun); }
-.contact .btn { border-color: var(--bg); box-shadow: 4px 4px 0 var(--accent); }
-.contact .btn:hover { box-shadow: 7px 7px 0 var(--accent); }
-.contact .btn-primary { background: var(--bg); color: var(--ink); }
-.contact .btn-primary:hover { color: var(--ink); background: var(--sun); }
-.contact .btn-ghost { background: transparent; color: var(--bg); }
-.contact .btn-ghost:hover { background: var(--bg); color: var(--ink); }
-.contact :focus-visible { outline-color: var(--sun); }
-.contact-note { color: var(--bg); opacity: .8; }
-.contact-doodle { position: absolute; right: -40px; top: -60px; width: 260px; height: 260px; border-radius: 50%; border: 2px dashed var(--accent); opacity: .5; animation: spin 40s linear infinite; }
-@media (prefers-reduced-motion: reduce) { .contact-doodle { animation: none; } }
+.contact { margin-top: clamp(3.5rem, 8vw, 6rem); background: #1c1b19; color: #f1ede6; padding: clamp(3.5rem, 9vw, 6.5rem) 0; }
+.contact-inner { display: flex; flex-direction: column; gap: 1.4rem; }
+.contact-title { font-family: var(--display); font-weight: 600; font-size: clamp(2.3rem, 6vw, 4.4rem); letter-spacing: -0.035em; line-height: 1; max-width: 16ch; }
+.contact-time { font: 600 .82rem/1 var(--body); color: #e8795a; text-transform: uppercase; letter-spacing: .12em; }
+.contact-email { font-family: var(--display); font-weight: 500; font-size: clamp(1.2rem, 3vw, 1.85rem); color: #f1ede6; text-decoration: underline; text-decoration-color: #e8795a; text-underline-offset: .22em; text-decoration-thickness: 2px; overflow-wrap: anywhere; align-self: flex-start; }
+.contact-email:hover { color: #e8795a; }
+.contact .btn-primary { background: #f1ede6; color: #1c1b19; }
+.contact .btn-primary:hover { background: #e8795a; color: #1c1b19; }
+.contact .btn-ghost { background: transparent; color: #f1ede6; border-color: #57524b; }
+.contact .btn-ghost:hover { border-color: #f1ede6; color: #f1ede6; }
+.contact :focus-visible { outline-color: #e8795a; }
+.contact-note { color: #f1ede6; opacity: .75; }
 
 .footer { padding-top: 1.5rem; padding-bottom: 2rem; color: var(--muted); font-size: .9rem; display: flex; flex-direction: column; gap: .75rem; }
 .legal { display: flex; flex-direction: column; gap: .25rem; max-width: 46rem; }
-.legal summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-weight: 700; color: var(--ink); }
+.legal summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-weight: 600; color: var(--ink); }
 .legal p { padding-bottom: .75rem; }
 
 /* Skeleton */
-.space-stage.is-loading::before { content: ""; position: absolute; inset: 1.5rem; background: var(--sk); border-radius: 14px; animation: sk-pulse 1.4s ease-in-out infinite; }
+.space-stage.is-loading::before { content: ""; position: absolute; inset: 1.5rem; background: var(--sk); border-radius: 12px; animation: sk-pulse 1.4s ease-in-out infinite; }
 .sk { min-height: 100vh; }
-.sk-bar { height: 66px; border-bottom: 2px solid var(--line); }
+.sk-bar { height: 64px; border-bottom: 1px solid var(--line); }
 .sk-hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 5vw, 4rem); padding-top: clamp(2.5rem, 6vw, 5rem); }
 @media (max-width: 980px) { .sk-hero { grid-template-columns: minmax(0, 1fr); } }
 .sk-col { display: flex; flex-direction: column; gap: 1rem; }
-.sk-line, .sk-panel { background: var(--sk); border-radius: 8px; animation: sk-pulse 1.4s ease-in-out infinite; }
+.sk-line, .sk-panel { background: var(--sk); border-radius: 6px; animation: sk-pulse 1.4s ease-in-out infinite; }
 .sk-line { height: 1rem; }
 .sk-line.h-xl { height: clamp(3rem, 7vw, 5.4rem); }
-.sk-panel { height: clamp(420px, 60vw, 640px); border-radius: 22px; }
+.sk-panel { height: clamp(420px, 60vw, 640px); border-radius: 18px; }
 .w40 { width: 40%; } .w50 { width: 50%; } .w60 { width: 60%; } .w80 { width: 80%; } .w90 { width: 90%; }
 @keyframes sk-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
 @media (prefers-reduced-motion: reduce) { .sk-line, .sk-panel, .space-stage.is-loading::before { animation: none; } }
@@ -324,8 +282,8 @@ html.is-ready .note path { animation: draw 1.1s ease .9s forwards; }
 #boot { position: fixed; inset: 0; z-index: 100; background: var(--bg); display: flex; align-items: center; justify-content: center; padding: 2rem; transition: opacity .5s ease, visibility .5s; }
 #boot.done { opacity: 0; visibility: hidden; }
 .boot-inner { width: min(34rem, 100%); display: flex; flex-direction: column; gap: 1.5rem; }
-.boot-name { font-family: var(--display); font-weight: 800; font-size: clamp(2.4rem, 8vw, 4rem); line-height: 1; letter-spacing: -0.035em; color: var(--ink); min-height: 1em; }
-.boot-cursor { display: inline-block; width: .08em; height: .85em; margin-left: .06em; background: var(--accent); vertical-align: -0.05em; animation: boot-blink 1s steps(1) infinite; }
+.boot-name { font-family: var(--display); font-weight: 700; font-size: clamp(2.4rem, 8vw, 4rem); line-height: 1; letter-spacing: -0.03em; color: var(--ink); min-height: 1em; }
+.boot-cursor { display: inline-block; width: .07em; height: .85em; margin-left: .06em; background: var(--accent); vertical-align: -0.05em; animation: boot-blink 1s steps(1) infinite; }
 .boot-term { font: 500 .92rem/1.7 ui-monospace, "SF Mono", Menlo, Consolas, monospace; color: var(--muted); list-style: none; padding: 0; margin: 0; min-height: 6.8em; }
 .boot-term li { opacity: 0; transform: translateY(4px); transition: opacity .25s ease, transform .25s ease; }
 .boot-term li.on { opacity: 1; transform: none; }
@@ -334,8 +292,6 @@ html.is-ready .note path { animation: draw 1.1s ease .9s forwards; }
 .boot-term .p { color: var(--accent); margin-right: .5em; }
 @keyframes boot-blink { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .boot-cursor { animation: none; } .boot-term li, #boot { transition: none; } }
-
-html.is-ready .rise .ch.risen { animation: none; opacity: 1; transform: none; }
 </style>
 </head>
 <body>
@@ -393,7 +349,7 @@ html.is-ready .rise .ch.risen { animation: none; opacity: 1; transform: none; }
 const{useState,useEffect,useRef,useMemo}=React,EMAIL="kapoorshashank02@gmail.com",PHONE_DISPLAY="+91 89890 97809",PHONE_TEL="+918989097809",GITHUB="https://github.com/kapoorshashank",CLUSTERS=[{id:"ai",name:"AI and LLM engineering",center:[-1.75,.6,.15]},{id:"fe",name:"Frontend",center:[1.8,.7,-.35]},{id:"be",name:"Backend, cloud and data",center:[.8,-1.5,.55]},{id:"tl",name:"AI-assisted engineering",center:[-1.2,-1.55,-.8]}],HERE="HERE Technologies",PS="Publicis Sapient (Verizon)",LTI="L&T Infotech (Travelers)",SKILLS=[{n:"AI agents",c:"ai",k:1,t:"agents agentic autonomous tools",d:"Agents and agentic workflows built with LangGraph and MCP."},{n:"Agentic workflows",c:"ai",k:1,t:"agents agentic workflow orchestration langgraph",d:"Task-oriented, multi-step AI workflows."},{n:"RAG",c:"ai",k:1,t:"rag retrieval search knowledge context",d:"Retrieval-augmented generation with LangChain-based orchestration."},{n:"LangGraph",c:"ai",k:1,t:"agents agentic langgraph orchestration graph",d:"Stateful agent graphs and control flow."},{n:"LangChain",c:"ai",k:1,t:"rag langchain orchestration llm agents python",d:"LLM orchestration, RAG, agents, tool calling and retrieval workflows."},{n:"MCP",c:"ai",k:1,t:"agents mcp model context protocol tools integration",d:"Model Context Protocol for connecting models to tools and data."},{n:"LLM applications",c:"ai",k:1,t:"llm genai generative applications enterprise fullstack",d:"Built HERE Code Assistant, an LLM-powered developer assistant.",w:HERE},{n:"Generative AI",c:"ai",t:"genai generative llm ai applications",d:"Integrating generative AI capabilities into software workflows."},{n:"Tool calling",c:"ai",t:"agents tools function calling api",d:"Tool and function calling for task-oriented AI workflows."},{n:"Embeddings",c:"ai",t:"rag embeddings vectors semantic search retrieval",d:"Embedding pipelines for semantic retrieval."},{n:"Vector databases",c:"ai",k:1,t:"rag vector database search retrieval pgvector",d:"Vector stores, including PostgreSQL pgvector, behind retrieval workflows.",w:HERE},{n:"AI evaluation",c:"ai",t:"evaluation evals quality llm agents",d:"Evaluating model and agent output quality."},{n:"Prompt engineering",c:"ai",t:"prompt llm context genai ai-assisted",d:"Prompt design and context improvements."},{n:"Python",c:"be",k:1,t:"python backend automation api llm langchain fullstack fastapi",d:"AI/LLM apps, backend services, automation and API integrations.",w:HERE},{n:"FastAPI",c:"be",k:1,t:"fastapi python backend api fullstack microservices",d:"Python API services for AI features.",w:HERE},{n:"Node.js",c:"be",k:1,t:"node backend api fullstack javascript",d:"JWT, Passport, Google sign-up, Axios, Winston logging, error handling.",w:`${HERE}, ${PS}, ${LTI}`},{n:"Microservices",c:"be",t:"microservices architecture backend api enterprise",d:"Service-based backend architecture."},{n:"Docker",c:"be",k:1,t:"docker containers devops cloud deployment",d:"Containerising services for consistent deployment."},{n:"Kubernetes",c:"be",t:"kubernetes k8s containers devops cloud deployment",d:"Orchestrating containerised services."},{n:"AWS",c:"be",k:1,t:"aws cloud deployment devops",d:"Cloud infrastructure for deployed applications."},{n:"PostgreSQL",c:"be",t:"postgresql postgres sql database backend data",d:"Relational data with pgvector for embeddings.",w:HERE},{n:"pgvector",c:"be",t:"pgvector vector database postgres rag retrieval",d:"Vector search inside PostgreSQL.",w:HERE},{n:"Express.js",c:"be",t:"express backend api middleware fullstack",d:"Middleware, HTTP calls, file upload.",w:LTI},{n:"Auth (JWT, Passport)",c:"be",t:"auth jwt passport security backend",d:"JWT, Passport local strategy and Google sign-up."},{n:"MS SQL",c:"be",t:"sql database backend data fullstack",d:"Relational data for insurance workflows.",w:LTI},{n:"React",c:"fe",k:1,t:"react frontend hooks redux ui fullstack",d:"Hooks, Context API, Redux, function and class components.",w:`${HERE}, ${PS}, ${LTI}`},{n:"Angular",c:"fe",k:1,t:"angular frontend rxjs ngrx ui fullstack",d:"RxJS, reactive forms, NgRx, Angular Material, route guards, HTTP interceptors.",w:`${HERE}, ${PS}, ${LTI}`},{n:"TypeScript",c:"fe",k:1,t:"typescript frontend types fullstack",d:"Generics, decorators, type inference, access modifiers."},{n:"Vue.js",c:"fe",t:"vue frontend ui",d:"Frontend development on the HERE Platform portal.",w:HERE},{n:"JavaScript ES6+",c:"fe",t:"javascript es6 async frontend fullstack",d:"Promises, async/await, the event loop, modern syntax."},{n:"Micro-frontends",c:"fe",k:1,t:"microfrontend micro-frontends architecture enterprise frontend",d:"Splitting large portals into independently shipped apps."},{n:"Module federation",c:"fe",t:"module federation microfrontend architecture frontend",d:"Runtime code sharing between micro-frontends."},{n:"Redux",c:"fe",t:"redux react state frontend",d:"State management for React apps."},{n:"NgRx",c:"fe",t:"ngrx angular state frontend",d:"State management for Angular apps."},{n:"RxJS",c:"fe",t:"rxjs angular reactive frontend",d:"Reactive streams in Angular."},{n:"Jest + RTL",c:"fe",t:"testing jest react frontend quality",d:"Unit testing with Jest and React Testing Library."},{n:"Spec-driven development",c:"tl",k:1,t:"spec driven development ai-assisted requirements specification",d:"Turning business requirements into technical specs with scope, edge cases and acceptance criteria before building.",w:HERE},{n:"PRP-first workflow",c:"tl",k:1,t:"prp product requirement prompts ai-assisted workflow",d:"Product Requirement Prompts as the source of truth, making AI-generated code more accurate and reviewable.",w:HERE},{n:"Claude",c:"tl",t:"ai-assisted claude coding tools agents llm",d:"AI-assisted development and agent creation."},{n:"Kiro",c:"tl",t:"ai-assisted kiro coding tools agents",d:"AI-assisted development workflows.",w:HERE},{n:"GitHub Copilot",c:"tl",t:"ai-assisted copilot coding tools",d:"AI-assisted coding, generation and debugging."},{n:"GitLab",c:"tl",t:"gitlab tools version control",d:"Version control and delivery.",w:`${HERE}, ${PS}`},{n:"Jira and Rally",c:"tl",t:"jira rally tools agile scrum",d:"Agile delivery, grooming and scrum.",w:`${HERE}, ${PS}, ${LTI}`},{n:"Postman",c:"tl",t:"postman tools api testing",d:"API testing and debugging."}],CHIPS=[{label:"AI agents",q:"agents agentic langgraph mcp tools"},{label:"RAG and retrieval",q:"rag retrieval embeddings vector pgvector"},{label:"Python backend",q:"python fastapi microservices postgresql"},{label:"Cloud and deployment",q:"docker kubernetes aws cloud"},{label:"Enterprise frontend",q:"react angular typescript microfrontend"},{label:"AI-assisted engineering",q:"spec prp ai-assisted claude kiro"}],CROSS_LINKS=[["Python","LangChain"],["FastAPI","LLM applications"],["pgvector","Vector databases"],["React","Node.js"],["TypeScript","Node.js"],["Claude","Prompt engineering"],["Kiro","AI agents"],["Spec-driven development","LLM applications"],["Tool calling","FastAPI"]],JOBS=[{when:"Aug 2022 to present",company:"HERE Technologies",role:"Senior Software Engineer",title:"Senior AI Full Stack Developer, HERE Platform portal",highlight:{name:"HERE Code Assistant",text:"An AI-powered developer assistant that brings LLM capabilities into enterprise software development workflows."},summary:"The HERE Platform portal is the hub where developers and businesses reach maps, geospatial data, APIs and SDKs to build location-aware applications. I develop and deploy end-to-end features across it.",points:["Set up a PRP-first workflow: structured Product Requirement Prompts as the source of truth for new features, improving the accuracy and reviewability of AI-generated code.","Turn business requirements into technical specs before implementation (spec-driven development), so scope, edge cases and acceptance criteria are clear up front.","Work with product managers, program managers and QA to find problems and choose solutions.","Take part in code reviews, grooming, refinement and scrum.","Resolve production issues alongside the support team."],stack:["Python","FastAPI","PostgreSQL","pgvector","Node.js","Angular","React","Vue.js","Kiro","GitLab"],team:"10-person dev team"},{when:"May 2021 to Aug 2022",company:"Publicis Sapient",role:"Associate Technology, Level 2",title:"Full Stack Developer, Verizon eBilling Static",summary:"End-to-end development of Verizon's eBilling Static application, which lets company and Linkset users view and edit billing information according to their role, with charts, email and save-to-PDF.",points:["Worked with product, program management and QA on problems, testing and solutions.","Supported production issue resolution with the support team."],stack:["Angular 11/12","React 16","Node.js","GitLab","Jira"],award:"Core values award: embracing the future and partnering for client impact"},{when:"May 2018 to May 2021",company:"L&T Infotech",role:"Software Engineer",title:"Full Stack Developer, Travelers Book Transfer",summary:"Built the Book Transfer application for Travelers Personal Insurance, which lets agents, sales executives and managers change policies for insured customers, with file upload, email notifications and Excel support.",points:["Developed full-stack web applications that process, analyze and visualize data.","Designed and built applications on the MEAN and MERN stacks."],stack:["Angular","React","Node.js","Express.js","MS SQL","Rally"],team:"6-person dev team",award:"Pat on the Back award, 2020"}],ROLES=["Senior / Lead AI Engineer","Applied AI Engineer","AI Solutions Engineer","Senior Full Stack Engineer","Forward Deployed Engineer"];function search(l){const t=l.toLowerCase().split(/[^a-z0-9+.#-]+/).filter(i=>i.length>1);return t.length?SKILLS.map((i,h)=>{const u=i.n.toLowerCase(),s=u+" "+i.t;let o=0;return t.forEach(r=>{s.includes(r)&&(o+=u.includes(r)?2:1)}),{i:h,score:o}}).filter(i=>i.score>0).sort((i,h)=>h.score-i.score).slice(0,8):[]}function mulberry32(l){return function(){l|=0,l=l+1831565813|0;let t=Math.imul(l^l>>>15,1|l);return t=t+Math.imul(t^t>>>7,61|t)^t,((t^t>>>14)>>>0)/4294967296}}function buildLayout(){const l=mulberry32(42),t=new Array(SKILLS.length);CLUSTERS.forEach(s=>{const o=SKILLS.map((a,S)=>a.c===s.id?S:-1).filter(a=>a>=0),r=o.length,e=.55+r*.035;o.forEach((a,S)=>{const c=1-2*(S+.5)/r,p=Math.sqrt(1-c*c),b=S*2.399963,A=()=>(l()-.5)*.22;t[a]=[s.center[0]+Math.cos(b)*p*e+A(),s.center[1]+c*e*.85+A(),s.center[2]+Math.sin(b)*p*e+A()]})});const i=new Set,h=(s,o)=>Math.hypot(t[s][0]-t[o][0],t[s][1]-t[o][1],t[s][2]-t[o][2]);SKILLS.forEach((s,o)=>{SKILLS.map((r,e)=>({k:e,d:r.c===s.c&&e!==o?h(o,e):1/0})).sort((r,e)=>r.d-e.d).slice(0,2).forEach(({k:r,d:e})=>{e<1/0&&i.add(o<r?`${o}-${r}`:`${r}-${o}`)})});const u=s=>SKILLS.findIndex(o=>o.n===s);return CROSS_LINKS.forEach(([s,o])=>{const r=u(s),e=u(o);r>=0&&e>=0&&i.add(r<e?`${r}-${e}`:`${e}-${r}`)}),{pos:t,edges:[...i].map(s=>s.split("-").map(Number))}}const LAYOUT=buildLayout();function readVar(l){try{return getComputedStyle(document.documentElement).getPropertyValue(l).trim()||"#888888"}catch{return"#888888"}}function SkillSpace({matches:l,onPick:t}){const i=useRef(null),h=useRef([]),u=useRef([]),s=useRef({matches:new Set,order:[]}),o=useRef(t),[r,e]=useState(!1),[a,S]=useState(!1);return o.current=t,useEffect(()=>{s.current.matches=new Set(l.map(c=>c.i)),s.current.order=l.map(c=>c.i)},[l]),useEffect(()=>{const c=i.current;if(!c||typeof THREE=="undefined"){e(!0);return}let p;try{p=new THREE.WebGLRenderer({antialias:!0,alpha:!0})}catch{e(!0);return}p.setPixelRatio(Math.min(window.devicePixelRatio||1,2)),p.domElement.className="space-gl",p.domElement.setAttribute("aria-hidden","true"),c.appendChild(p.domElement);const b=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches,A=new THREE.Scene,E=new THREE.PerspectiveCamera(40,1,.1,100);E.position.set(0,0,7.4);const f=new THREE.Group;f.rotation.x=.12,A.add(f);const me={ai:new THREE.SphereGeometry(.08,20,16),fe:new THREE.BoxGeometry(.13,.13,.13),be:new THREE.TetrahedronGeometry(.11,0),tl:new THREE.OctahedronGeometry(.1,0)},x=SKILLS.map((n,d)=>{const m=new THREE.MeshBasicMaterial({transparent:!0,opacity:1}),y=new THREE.Mesh(me[n.c],m);return y.position.set(...LAYOUT.pos[d]),y.userData.i=d,f.add(y),y}),O=[];LAYOUT.edges.forEach(([n,d])=>O.push(...LAYOUT.pos[n],...LAYOUT.pos[d]));const J=new THREE.BufferGeometry;J.setAttribute("position",new THREE.Float32BufferAttribute(O,3));const I=new THREE.LineBasicMaterial({transparent:!0,opacity:.55});f.add(new THREE.LineSegments(J,I));const K=new THREE.MeshBasicMaterial,k=new THREE.Mesh(new THREE.SphereGeometry(.06,16,12),K);k.scale.setScalar(.001),f.add(k);const q=new THREE.Mesh(new THREE.RingGeometry(.2,.225,48),new THREE.MeshBasicMaterial({transparent:!0,opacity:.6,side:THREE.DoubleSide}));k.add(q);const U=new Float32Array(SKILLS.length*6),H=new THREE.BufferGeometry;H.setAttribute("position",new THREE.BufferAttribute(U,3));const Y=new THREE.LineBasicMaterial({transparent:!0,opacity:.85}),X=new THREE.LineSegments(H,Y);f.add(X);const F=()=>{x.forEach((n,d)=>n.material.color.set(readVar("--k-"+SKILLS[d].c))),I.color.set(readVar("--edge")),K.color.set(readVar("--ink")),q.material.color.set(readVar("--ink")),Y.color.set(readVar("--ink"))};F();const L=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null,Q=()=>F();L&&L.addEventListener&&L.addEventListener("change",Q);const _=new MutationObserver(F);_.observe(document.documentElement,{attributes:!0,attributeFilter:["data-theme","class"]});let P=1,C=1;const Z=()=>{P=c.clientWidth||1,C=c.clientHeight||1,p.setSize(P,C,!1),E.aspect=P/C,E.position.z=E.aspect<.9?10:E.aspect<1.3?8.6:7.4,E.updateProjectionMatrix()};Z();const ee=new ResizeObserver(Z);ee.observe(c);const R=p.domElement,te=new THREE.Raycaster,B=new THREE.Vector2;let M=-1,w=null,j=.35,D=.12,z=0;const ae=(n,d)=>{const m=R.getBoundingClientRect();B.x=(n-m.left)/m.width*2-1,B.y=-((d-m.top)/m.height)*2+1,te.setFromCamera(B,E);const y=te.intersectObjects(x,!1);return y.length?y[0].object.userData.i:-1},ne=n=>{w={x:n.clientX,y:n.clientY,moved:0},z=performance.now()},se=n=>{if(w){const d=n.clientX-w.x,m=n.clientY-w.y;w.moved+=Math.abs(d)+Math.abs(m),j+=d*.008,n.pointerType==="mouse"&&(D=Math.max(-.7,Math.min(.7,D+m*.005))),w.x=n.clientX,w.y=n.clientY,z=performance.now()}else n.pointerType==="mouse"&&(M=ae(n.clientX,n.clientY),R.style.cursor=M>=0?"pointer":"grab")},oe=n=>{if(w&&w.moved<6){const d=ae(n.clientX,n.clientY);d>=0&&o.current&&o.current(d)}w=null},re=()=>{M=-1},ie=()=>{w=null};R.addEventListener("pointerdown",ne),window.addEventListener("pointermove",se),window.addEventListener("pointerup",oe),window.addEventListener("pointercancel",ie),R.addEventListener("pointerleave",re);const $=new THREE.Vector3,G=new THREE.Vector3,le=n=>($.copy(n).applyMatrix4(f.matrixWorld).project(E),{x:($.x*.5+.5)*P,y:(-$.y*.5+.5)*C,z:$.z}),ue=CLUSTERS.map(n=>new THREE.Vector3(n.center[0],n.center[1]+1.05,n.center[2]));let ce,de=!1;const pe=()=>{ce=requestAnimationFrame(pe);const n=performance.now();!b&&!w&&n-z>2500&&(j+=.0016),f.rotation.y+=(j-f.rotation.y)*.08,f.rotation.x+=(D-f.rotation.x)*.08,f.updateMatrixWorld();const d=s.current,m=d.matches.size>0,y=b?1:.14;x.forEach((g,v)=>{const N=d.matches.has(v)||M===v,T=g.scale.x+((N?1.75:1)-g.scale.x)*y;g.scale.setScalar(T);const W=m&&!N?.22:1;g.material.opacity+=(W-g.material.opacity)*y}),I.opacity+=((m?.22:.55)-I.opacity)*y,m&&(G.set(0,0,0),d.order.forEach(g=>G.add(x[g].position)),G.multiplyScalar(.62/d.order.length)),k.position.lerp(G,b?1:.08);const he=k.scale.x+((m?1:.001)-k.scale.x)*y;k.scale.setScalar(he),q.lookAt(E.position);let V=0;d.order.forEach(g=>{const v=x[g].position;U.set([k.position.x,k.position.y,k.position.z,v.x,v.y,v.z],V*6),V++}),H.setDrawRange(0,V*2),H.attributes.position.needsUpdate=!0,X.visible=m,x.forEach((g,v)=>{const N=h.current[v];if(!N)return;const T=le(g.position),W=(d.matches.has(v)||M===v)&&T.z<1;N.style.transform=`translate(${T.x.toFixed(1)}px, ${T.y.toFixed(1)}px) translate(-50%, -150%)`,N.style.opacity=W?"1":"0"}),ue.forEach((g,v)=>{const N=u.current[v];if(!N)return;const T=le(g);N.style.transform=`translate(${T.x.toFixed(1)}px, ${T.y.toFixed(1)}px) translate(-50%, -50%)`,N.style.opacity=m?"0.55":"1"}),p.render(A,E),de||(de=!0,S(!0))};return pe(),()=>{cancelAnimationFrame(ce),ee.disconnect(),_.disconnect(),L&&L.removeEventListener&&L.removeEventListener("change",Q),R.removeEventListener("pointerdown",ne),window.removeEventListener("pointermove",se),window.removeEventListener("pointerup",oe),window.removeEventListener("pointercancel",ie),R.removeEventListener("pointerleave",re),p.dispose(),R.parentNode&&R.parentNode.removeChild(R)}},[]),React.createElement("div",{className:a||r?"space-stage":"space-stage is-loading","aria-busy":!a&&!r,ref:i,role:"img","aria-label":"A 3D map of Shashank's skills grouped into AI, frontend, backend and tooling clusters. The ranked list below it holds the same information."},r&&React.createElement("p",{className:"space-fallback"},"The 3D view needs WebGL. The ranked list below shows the same results."),React.createElement("div",{className:"space-labels","aria-hidden":"true"},CLUSTERS.map((c,p)=>React.createElement("span",{key:c.id,ref:b=>u.current[p]=b,className:`cluster-label c-${c.id}`},c.name)),SKILLS.map((c,p)=>React.createElement("span",{key:c.n,ref:b=>h.current[p]=b,className:`node-label c-${c.c}`},c.n))))}function CopyEmail({className:l}){const[t,i]=useState(!1),h=async()=>{try{await navigator.clipboard.writeText(EMAIL),i(!0)}catch{window.prompt("Copy this email address:",EMAIL)}};return useEffect(()=>{if(!t)return;const u=setTimeout(()=>i(!1),2200);return()=>clearTimeout(u)},[t]),React.createElement("button",{type:"button",className:l,onClick:h,"aria-live":"polite"},t?"Email copied":"Copy email")}const h=React.createElement,LINKEDIN="https://www.linkedin.com/in/kapoorshashanksk",REDUCE=!!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches);
 function Bouncy({text,className,rise,start}){
   let n=start||0;const words=text.split(" ");
-  const onOver=e=>{const el=e.target;if(!el.classList||!el.classList.contains("ch")||REDUCE)return;el.classList.remove("boing");void el.offsetWidth;el.classList.add("boing")};
+  const onOver=e=>{const el=e.target;return;el.classList.remove("boing");void el.offsetWidth;el.classList.add("boing")};
   const onEnd=e=>{const c=e.target.classList;if(!c)return;if(e.animationName==="rise")c.add("risen");if(e.animationName==="boing")c.remove("boing")};
   const kids=[];
   words.forEach((w,wi)=>{kids.push(h("span",{key:"w"+wi,className:"word"},[...w].map((c,ci)=>h("span",{key:ci,className:"ch",style:{"--i":n++}},c))));if(wi<words.length-1)kids.push(" ")});
@@ -426,26 +382,7 @@ function useInteractions(){
     // reveal on scroll
     const els=[...document.querySelectorAll(".reveal")];let io=null;
     if("IntersectionObserver" in window&&!REDUCE){io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -8% 0px",threshold:.08});els.forEach(el=>io.observe(el))}else els.forEach(el=>el.classList.add("in"));
-    const fine=window.matchMedia&&matchMedia("(pointer: fine)").matches;
-    if(!fine||REDUCE)return()=>{io&&io.disconnect()};
-    // cursor blob
-    const blob=document.createElement("div");blob.className="blob hide";blob.setAttribute("aria-hidden","true");document.body.appendChild(blob);
-    let tx=-100,ty=-100,x=-100,y=-100,raf;
-    const loop=()=>{x+=(tx-x)*.18;y+=(ty-y)*.18;blob.style.transform=`translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0)`;raf=requestAnimationFrame(loop)};loop();
-    // magnetic buttons
-    let mag=null;
-    const resetMag=()=>{if(mag){mag.style.transform="";mag=null}};
-    const move=e=>{
-      tx=e.clientX;ty=e.clientY;blob.classList.remove("hide");
-      const t=e.target.closest?e.target.closest("a,button,input,.hl-tags li,.chip,.years"):null;
-      blob.classList.toggle("big",!!t);
-      const m=e.target.closest?e.target.closest(".magnetic"):null;
-      if(m!==mag)resetMag();
-      if(m){mag=m;const r=m.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);m.style.transform=`translate(${(dx*.28).toFixed(1)}px,${(dy*.35).toFixed(1)}px)`}
-    };
-    const leave=()=>{blob.classList.add("hide");resetMag()};
-    window.addEventListener("pointermove",move,{passive:!0});document.documentElement.addEventListener("mouseleave",leave);
-    return()=>{io&&io.disconnect();cancelAnimationFrame(raf);blob.remove();window.removeEventListener("pointermove",move);document.documentElement.removeEventListener("mouseleave",leave)};
+    return()=>{io&&io.disconnect()};
   },[]);
 }
 function App(){
@@ -458,25 +395,24 @@ function App(){
   return h(React.Fragment,null,
     h("a",{className:"skip",href:"#main"},"Skip to content"),
     h("header",{className:"topbar"},h("div",{className:"wrap topbar-inner"},
-      h("a",{href:"#top",className:"wordmark"},"shashank",h("b",null,".")),
+      h("a",{href:"#top",className:"wordmark"},"Shashank Kapoor"),
       h("nav",{"aria-label":"Sections",className:"nav"},h("a",{href:"#now"},"Now"),h("a",{href:"#work"},"Work"),h("a",{href:"#skills"},"Skills"),h("a",{href:"#contact"},"Contact")),
-      h("a",{className:"btn btn-primary btn-small magnetic",href:`mailto:${EMAIL}`},"Say hi 👋"))),
+      h("a",{className:"btn btn-primary btn-small",href:`mailto:${EMAIL}`},"Get in touch"))),
     h("main",{id:"main"},
       h("section",{className:"wrap hero",id:"top"},
         h("div",{className:"hero-copy"},
           h("div",{className:"name-row"},
-            h("p",{className:"hello"},"Hey, I'm",h("span",{className:"wave","aria-hidden":"true"},"👋")),
-            h("h1",{className:"name"},h(Bouncy,{text:"Shashank",rise:!0}),h("br"),h("span",{className:"name-l2"},h(Bouncy,{text:"Kapoor",rise:!0,start:8}),h(YearsBadge)))),
+            h("p",{className:"hello"},"AI Full Stack Developer"),
+            h("h1",{className:"name"},h(Bouncy,{text:"Shashank",rise:!0}),h("br"),h("span",{className:"name-l2"},h(Bouncy,{text:"Kapoor",rise:!0,start:8})))),
           h("p",{className:"role"},"I build ",h(Rotator,{words:["AI agents","RAG pipelines","LLM apps","FastAPI services","React & Angular apps"]})),
-          h("p",{className:"sub"},h("strong",null,"AI Full Stack Developer")," · 8+ years · Bangalore, India"),
-          h("p",{className:"note","aria-hidden":"true"},"the stuff I'm best at",h("svg",{viewBox:"0 0 64 38"},h("path",{d:"M3 6 C 18 2, 34 10, 40 22 C 44 30, 52 33, 60 32 M52 25 L60 32 L51 37"}))),
+          h("p",{className:"sub"},"Senior Software Engineer at ",h("strong",null,"HERE Technologies"),", based in Bangalore."),h("dl",{className:"stats"},h("div",{className:"stat"},h("dt",null,"8+"),h("dd",null,"years of professional experience")),h("div",{className:"stat"},h("dt",null,"3"),h("dd",null,"enterprise companies")),h("div",{className:"stat stat-wide"},h("dt",null,"AI + Full stack"),h("dd",null,"Agents, RAG, Python, FastAPI, React, Angular"))),
           h(Stickers,{groups:HL}),
           h("div",{className:"cta-row"},
-            h("a",{className:"btn btn-primary magnetic",href:`mailto:${EMAIL}`},"Email me ✉️"),
-            h("a",{className:"btn btn-ghost magnetic",href:`tel:${PHONE_TEL}`},"Call ",PHONE_DISPLAY))),
+            h("a",{className:"btn btn-primary",href:`mailto:${EMAIL}`},"Email me"),
+            h("a",{className:"btn btn-ghost",href:`tel:${PHONE_TEL}`},"Call ",PHONE_DISPLAY))),
         h("div",{className:"space reveal","aria-labelledby":"space-title",style:{"--d":".15s"}},
           h("div",{className:"space-head"},
-            h("p",{className:"space-kicker","aria-hidden":"true"},"go on, play with it ↓"),
+            h("p",{className:"space-kicker","aria-hidden":"true"},"Interactive"),
             h("h2",{id:"space-title",className:"space-title"},"Search my skills like a vector store"),
             h("p",{className:"space-sub"},"Each point is a skill, grouped by what it's near. Pick a query and the closest skills light up. Drag to spin the map, tap a point to search from it.")),
           h(SkillSpace,{matches,onPick:pick}),
@@ -491,48 +427,47 @@ function App(){
         h("div",{className:"card reveal"},
           h("p",{className:"card-kicker"},h("span",{className:"live-dot","aria-hidden":"true"}),"Now"),
           h("ul",{className:"now-list"},
-            h("li",null,h("span",{className:"now-ico","aria-hidden":"true"},"🛠️"),h("span",{className:"now-k"},"building"),h("span",{className:"now-v"},"HERE Code Assistant, an AI agent that writes HERE Maps integration code")),
-            h("li",null,h("span",{className:"now-ico","aria-hidden":"true"},"🧪"),h("span",{className:"now-k"},"exploring"),h("span",{className:"now-v"},"Agentic workflows, MCP and spec-driven AI development")),
-            h("li",null,h("span",{className:"now-ico","aria-hidden":"true"},"📍"),h("span",{className:"now-k"},"based in"),h("span",{className:"now-v"},"Bangalore, where it's ",clock," right now")),
-            h("li",null,h("span",{className:"now-ico","aria-hidden":"true"},"🎯"),h("span",{className:"now-k"},"open to"),h("span",{className:"now-v"},"Senior or Lead AI Engineer roles")))),
+            h("li",null,h("span",{className:"now-k"},"Building"),h("span",{className:"now-v"},"HERE Code Assistant, an AI agent that writes HERE Maps integration code")),
+            h("li",null,h("span",{className:"now-k"},"Exploring"),h("span",{className:"now-v"},"Agentic workflows, MCP and spec-driven AI development")),
+            h("li",null,h("span",{className:"now-k"},"Location"),h("span",{className:"now-v"},"Bangalore, India · ",clock," IST")),
+            h("li",null,h("span",{className:"now-k"},"Open to"),h("span",{className:"now-v"},"Senior or Lead AI Engineer roles")))),
         h("div",{className:"card roles-card reveal",style:{"--d":".1s"}},
-          h("h2",{className:"card-kicker"},"Roles I'd love"),
+          h("h2",{className:"card-kicker"},"Roles I'm targeting"),
           h("ul",{className:"role-list"},ROLES.map(r=>h("li",{key:r},r))))),
-      h("div",{className:"marquee","aria-hidden":"true"},h("div",{className:"marquee-track"},[...MARQ,...MARQ].map((m,i)=>h("span",{key:i},m)))),
       h("section",{className:"wrap section",id:"work","aria-labelledby":"work-title"},
-        h("div",{className:"section-head reveal"},h("h2",{className:"section-title",id:"work-title"},"Where I've been"),h("p",{className:"section-aside","aria-hidden":"true"},"8+ years, 3 companies")),
+        h("div",{className:"section-head reveal"},h("h2",{className:"section-title",id:"work-title"},"Experience"),h("p",{className:"section-aside"},h("strong",null,"8+ years")," across HERE, Publicis Sapient and L&T Infotech")),
         h("ol",{className:"timeline"},JOBS.map(e=>h("li",{className:"job card reveal",key:e.company},
           h("div",{className:"job-meta"},h("p",{className:"job-when"},e.when),h("p",{className:"job-company"},e.company),e.team&&h("p",{className:"job-team"},e.team)),
           h("div",{className:"job-body"},
             h("h3",{className:"job-role"},e.role),h("p",{className:"job-title"},e.title),
-            e.highlight&&h("div",{className:"feature"},h("p",{className:"feature-name"},"⚡ ",e.highlight.name),h("p",{className:"feature-text"},e.highlight.text)),
+            e.highlight&&h("div",{className:"feature"},h("p",{className:"feature-name"},e.highlight.name),h("p",{className:"feature-text"},e.highlight.text)),
             h("p",{className:"job-summary"},e.summary),
             h("ul",{className:"job-points"},e.points.map(p=>h("li",{key:p},p))),
             h("ul",{className:"tags","aria-label":"Stack"},e.stack.map(t=>h("li",{key:t},t))),
             e.award&&h("p",{className:"award"},e.award)))))),
       h("section",{className:"wrap section",id:"skills","aria-labelledby":"skills-title"},
-        h("div",{className:"section-head reveal"},h("h2",{className:"section-title",id:"skills-title"},"What I'm good at"),h("p",{className:"section-aside"},"★ = the ones to hire me for")),
+        h("div",{className:"section-head reveal"},h("h2",{className:"section-title",id:"skills-title"},"Skills"),h("p",{className:"section-aside"},h("strong",null,"★")," marks key skills")),
         h("div",{className:"skill-grid"},CLUSTERS.map((c,ci)=>h("div",{className:"skill-col card reveal",key:c.id,style:{"--d":ci*.08+"s"}},
           h("h3",{className:`skill-head c-${c.id}`},h("span",{className:`dot c-${c.id}`,"aria-hidden":"true"}),c.name),
           h("ul",{className:"skill-list"},SKILLS.filter(s=>s.c===c.id).sort((a,b)=>(b.k|0)-(a.k|0)).map(s=>h("li",{key:s.n},h("strong",null,s.n,s.k&&h("em",{className:"key-badge",title:"Key skill","aria-label":"key skill"},"★")),h("span",null,s.d)))))))),
       h("section",{className:"wrap section two-col","aria-label":"Education and recognition"},
-        h("div",{className:"card reveal"},h("h2",{className:"section-title"},"Education 🎓"),h("p",{className:"edu-degree"},"Bachelor of Engineering, Electronics and Communications"),h("p",{className:"edu-meta"},"LNCT, RGPV University, 2014 to 2018. Scored 82.9%.")),
-        h("div",{className:"card reveal",style:{"--d":".1s","--tilt":".5deg"}},h("h2",{className:"section-title"},"Recognition 🏆"),h("ul",{className:"plain-list"},h("li",null,h("strong",null,"Core values award, Publicis Sapient.")," For embracing the future and partnering for client impact."),h("li",null,h("strong",null,"Pat on the Back award, L&T Infotech, 2020."))))),
+        h("div",{className:"card reveal"},h("h2",{className:"section-title"},"Education"),h("p",{className:"edu-degree"},"Bachelor of Engineering, Electronics and Communications"),h("p",{className:"edu-meta"},"LNCT, RGPV University, 2014 to 2018. Scored 82.9%.")),
+        h("div",{className:"card reveal",style:{"--d":".1s","--tilt":".5deg"}},h("h2",{className:"section-title"},"Recognition"),h("ul",{className:"plain-list"},h("li",null,h("strong",null,"Core values award, Publicis Sapient.")," For embracing the future and partnering for client impact."),h("li",null,h("strong",null,"Pat on the Back award, L&T Infotech, 2020."))))),
       h("section",{className:"contact",id:"contact","aria-labelledby":"contact-title"},
-        h("div",{className:"contact-doodle","aria-hidden":"true"}),
+        
         h("div",{className:"wrap contact-inner"},
-          h("p",{className:"contact-time"},"it's ",clock," in Bangalore ☕"),
-          h("h2",{className:"contact-title",id:"contact-title"},h(Bouncy,{text:"Let's build something together."})),
+          h("p",{className:"contact-time"},"Bangalore, India · ",clock," IST"),
+          h("h2",{className:"contact-title",id:"contact-title"},"Let's build something together."),
           h("a",{className:"contact-email",href:`mailto:${EMAIL}`},EMAIL),
           h("div",{className:"cta-row"},
-            h("a",{className:"btn btn-primary magnetic",href:`mailto:${EMAIL}`},"Email me ✉️"),
-            h("a",{className:"btn btn-ghost magnetic",href:`tel:${PHONE_TEL}`},"Call ",PHONE_DISPLAY),
-            h(CopyEmail,{className:"btn btn-ghost magnetic"}),
-            h("a",{className:"btn btn-ghost magnetic",href:LINKEDIN,target:"_blank",rel:"noopener noreferrer"},"LinkedIn"),
-            h("a",{className:"btn btn-ghost magnetic",href:GITHUB,target:"_blank",rel:"noopener noreferrer"},"GitHub")),
+            h("a",{className:"btn btn-primary",href:`mailto:${EMAIL}`},"Email me"),
+            h("a",{className:"btn btn-ghost",href:`tel:${PHONE_TEL}`},"Call ",PHONE_DISPLAY),
+            h(CopyEmail,{className:"btn btn-ghost"}),
+            h("a",{className:"btn btn-ghost",href:LINKEDIN,target:"_blank",rel:"noopener noreferrer"},"LinkedIn"),
+            h("a",{className:"btn btn-ghost",href:GITHUB,target:"_blank",rel:"noopener noreferrer"},"GitHub")),
           h("p",{className:"contact-note"},"Speaks English and Hindi. Open to Senior or Lead AI Engineer, Applied AI, Senior Full Stack and Forward Deployed roles.")))),
     h("footer",{className:"wrap footer"},
-      h("p",null,"Designed and built by Shashank Kapoor in Bangalore, with React and Three.js."),
+      h("p",null,"Shashank Kapoor, AI Full Stack Developer. Built with React and Three.js."),
       h("div",{className:"legal"},
         h("details",null,h("summary",null,"Privacy policy"),h("p",null,"This site sets no cookies, runs no analytics and has no forms or sign-ups, so it collects and stores nothing about you. Fonts load from Google Fonts and code libraries from cdnjs, which receive your IP address as part of any normal web request. My email and phone number are listed so recruiters can contact me directly.")),
         h("details",null,h("summary",null,"Terms of use"),h("p",null,"This page describes my own work and is shared for hiring and information purposes. Company and client names belong to their owners and appear only to describe my employment history. Please ask before republishing any of the content.")))));
