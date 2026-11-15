@@ -1,28 +1,223 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Shashank Kapoor | Developer</title>
-  <base href="https://kapoorshashank.github.io/Portfolio/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-  
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <link href="assets/css/aos.css" rel="stylesheet">
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="styles.09e2c710755c8867a460.css"></head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shashank Kapoor, AI Full Stack Developer</title>
+<meta name="description" content="Shashank Kapoor, AI Full Stack Developer with 8+ years building AI agents, RAG pipelines and React/Angular enterprise applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ecedea;
+  --surface: #f6f7f4;
+  --ink: #1b1f1c;
+  --muted: #555c56;
+  --line: #d3d6d0;
+  --edge: #c3c8c1;
+  --accent: #1d6b4f;
+  --accent-ink: #f6f7f4;
+  --sk: #dfe1dc;
+  --k-ai: #1d6b4f;
+  --k-fe: #1b1f1c;
+  --k-be: #6b726c;
+  --k-tl: #a3a9a4;
+  --radius: 4px;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #171b18; --surface: #1e231f; --ink: #e6e9e4; --muted: #a2aaa3; --line: #303831; --edge: #3a433c;
+    --accent: #7cc2a0; --accent-ink: #171b18; --sk: #262c27;
+    --k-ai: #7cc2a0; --k-fe: #e6e9e4; --k-be: #9aa29b; --k-tl: #5f6861;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #171b18; --surface: #1e231f; --ink: #e6e9e4; --muted: #a2aaa3; --line: #303831; --edge: #3a433c;
+  --accent: #7cc2a0; --accent-ink: #171b18; --sk: #262c27;
+  --k-ai: #7cc2a0; --k-fe: #e6e9e4; --k-be: #9aa29b; --k-tl: #5f6861;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 80px); }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; }
+p, h1, h2, h3, ul, ol { margin: 0; }
+a { color: var(--accent); }
+a:hover { color: var(--ink); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding-inline: clamp(1.1rem, 4vw, 2.5rem); }
+.skip { position: absolute; left: -9999px; top: 0; }
+.skip:focus { left: 1rem; top: 1rem; z-index: 50; background: var(--surface); padding: .6rem 1rem; }
+
+/* Top bar: solid, no glass */
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
+.topbar-inner { display: flex; align-items: center; gap: 1.5rem; min-height: 64px; }
+.wordmark { font-family: var(--display); font-weight: 700; font-size: 1.1rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.nav { display: flex; gap: .25rem; margin-left: auto; }
+.nav a { color: var(--muted); text-decoration: none; padding: .6rem .75rem; min-height: 44px; display: inline-flex; align-items: center; }
+.nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: .25em; }
+@media (max-width: 560px) { .nav { display: none; } .topbar-inner .btn-small { margin-left: auto; } }
+
+/* Buttons: tight corners, no animated hover */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 1.3rem; border-radius: var(--radius); font: 600 1rem/1 var(--body); text-decoration: none; cursor: pointer; border: 1.5px solid transparent; }
+.btn-small { min-height: 44px; padding: 0 1rem; font-size: .95rem; }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: var(--ink); color: var(--bg); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--edge); }
+.btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+.cta-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 4rem); padding-top: clamp(2.5rem, 6vw, 5rem); padding-bottom: clamp(3rem, 6vw, 5rem); align-items: start; }
+@media (max-width: 960px) { .hero { grid-template-columns: minmax(0, 1fr); } }
+.hero-copy { display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 100px; }
+@media (max-width: 960px) { .hero-copy { position: static; } }
+.name { font-family: var(--display); font-weight: 800; font-size: clamp(3.4rem, 8.2vw, 6.4rem); line-height: .9; letter-spacing: -0.045em; }
+.role { font-family: var(--display); font-weight: 600; font-size: clamp(1.3rem, 2.2vw, 1.65rem); letter-spacing: -0.01em; }
+.lede { color: var(--muted); max-width: 34rem; font-size: 1.125rem; }
+.lede-hl { display: flex; flex-direction: column; gap: 1rem; max-width: 36rem; }
+.hl-label { font: 600 .82rem/1 var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: .55rem; }
+.hl-tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .45rem; }
+.hl-tags li { font-weight: 600; font-size: .95rem; line-height: 1.2; padding: .4rem .75rem; border-radius: 2px; border: 1.5px solid var(--ink); color: var(--ink); }
+.hl-ai li { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.open-to { border-top: 1px solid var(--line); padding-top: 1.25rem; display: flex; flex-direction: column; gap: .5rem; }
+.open-title { font: 600 .95rem/1.3 var(--body); color: var(--muted); }
+.role-list { list-style: none; padding: 0; }
+.role-list li { padding: .45rem 0; border-bottom: 1px solid var(--line); font-weight: 600; }
+
+/* Skill space */
+.space { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.space-head { padding: 1.5rem 1.5rem 0; display: flex; flex-direction: column; gap: .4rem; }
+.space-title { font-family: var(--display); font-weight: 700; font-size: clamp(1.35rem, 2.4vw, 1.75rem); letter-spacing: -0.02em; line-height: 1.15; }
+.space-sub { color: var(--muted); font-size: .98rem; max-width: 40rem; }
+.space-stage { position: relative; height: clamp(340px, 46vw, 470px); margin-top: .5rem; overflow: hidden; }
+.space-gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: pan-y; }
+.space-gl:active { cursor: grabbing; }
+.space-labels { position: absolute; inset: 0; pointer-events: none; }
+.space-fallback { position: absolute; inset: 0; display: grid; place-items: center; padding: 2rem; text-align: center; color: var(--muted); }
+.node-label, .cluster-label { position: absolute; left: 0; top: 0; white-space: nowrap; will-change: transform, opacity; }
+.node-label { font: 600 .8rem/1 var(--body); background: var(--surface); color: var(--ink); border: 1.5px solid var(--c); padding: .3rem .5rem; border-radius: 2px; opacity: 0; }
+.cluster-label { font: 700 .95rem/1 var(--display); letter-spacing: -0.01em; color: var(--ink); }
+.cluster-label.c-ai { color: var(--accent); }
+.c-ai { --c: var(--k-ai); }
+.c-fe { --c: var(--k-fe); }
+.c-be { --c: var(--k-be); }
+.c-tl { --c: var(--k-tl); }
+
+.space-query { padding: 1.25rem 1.5rem 0; display: flex; flex-direction: column; gap: .75rem; border-top: 1px solid var(--line); }
+.q-label { font-weight: 600; font-size: .95rem; }
+#skill-q { width: 100%; min-height: 50px; padding: 0 1rem; border-radius: var(--radius); border: 1.5px solid var(--edge); background: var(--bg); color: var(--ink); font: 500 1.05rem var(--body); }
+#skill-q::placeholder { color: var(--muted); }
+#skill-q:focus-visible { border-color: var(--accent); outline-offset: 1px; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip { min-height: 44px; padding: 0 1rem; border-radius: var(--radius); border: 1.5px solid var(--edge); background: transparent; color: var(--ink); font: 600 .92rem var(--body); cursor: pointer; }
+.chip:hover { border-color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.results { padding: 1.25rem 1.5rem 1.5rem; }
+.empty { color: var(--muted); }
+.result-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .25rem 1.5rem; }
+@media (max-width: 640px) { .result-list { grid-template-columns: minmax(0, 1fr); } }
+.result { display: flex; gap: .75rem; padding: .7rem 0; border-bottom: 1px solid var(--line); }
+
+/* Cluster markers: told apart by shape, not hue */
+.dot { width: .7rem; height: .7rem; background: var(--c); flex: none; margin-top: .45rem; display: inline-block; }
+.dot.c-ai { border-radius: 50%; }
+.dot.c-be { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.dot.c-tl { transform: rotate(45deg) scale(.82); }
+
+.r-name { font-weight: 700; display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; }
+.r-cluster { font-weight: 500; font-size: .82rem; color: var(--muted); }
+.r-desc { color: var(--muted); font-size: .95rem; line-height: 1.5; }
+.r-where { font-size: .88rem; font-weight: 600; margin-top: .2rem; }
+
+/* Sections */
+.section { padding-top: clamp(3rem, 7vw, 5.5rem); padding-bottom: clamp(1rem, 3vw, 2rem); }
+.section-title { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 4vw, 2.9rem); letter-spacing: -0.035em; line-height: 1; margin-bottom: 1.75rem; }
+
+.timeline { list-style: none; padding: 0; }
+.job { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: clamp(1rem, 4vw, 3rem); padding: 2.25rem 0; border-top: 1px solid var(--line); }
+@media (max-width: 760px) { .job { grid-template-columns: minmax(0, 1fr); gap: .75rem; } }
+.job-meta { display: flex; flex-direction: column; gap: .2rem; }
+.job-when { font-weight: 600; }
+.job-company { font-family: var(--display); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
+.job-team { color: var(--muted); font-size: .95rem; }
+.job-body { display: flex; flex-direction: column; gap: .9rem; max-width: 46rem; }
+.job-role { font-family: var(--display); font-weight: 700; font-size: clamp(1.4rem, 2.6vw, 1.8rem); letter-spacing: -0.02em; line-height: 1.15; }
+.job-title { color: var(--muted); margin-top: -.5rem; }
+.feature { border: 1.5px solid var(--ink); border-radius: var(--radius); padding: 1.1rem 1.25rem; background: var(--surface); }
+.feature-name { font-family: var(--display); font-weight: 700; font-size: 1.2rem; }
+.job-points { padding-left: 1.2rem; color: var(--muted); display: flex; flex-direction: column; gap: .3rem; }
+.tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.tags li { border: 1px solid var(--edge); border-radius: 2px; padding: .2rem .55rem; font-size: .88rem; font-weight: 600; }
+.award { font-weight: 600; font-size: .95rem; }
+
+.skill-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; }
+@media (max-width: 1060px) { .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .skill-grid { grid-template-columns: minmax(0, 1fr); } }
+.skill-head { display: flex; align-items: center; gap: .55rem; font-family: var(--display); font-size: 1.15rem; font-weight: 700; padding-bottom: .75rem; border-bottom: 1.5px solid var(--ink); margin-bottom: .5rem; }
+.skill-head .dot { margin-top: 0; }
+.skill-list { list-style: none; padding: 0; }
+.skill-list li { padding: .6rem 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; }
+.skill-list span { color: var(--muted); font-size: .92rem; line-height: 1.45; }
+
+.two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
+@media (max-width: 760px) { .two-col { grid-template-columns: minmax(0, 1fr); gap: 1rem; } }
+.edu-degree { font-weight: 700; font-size: 1.15rem; }
+.edu-meta { color: var(--muted); }
+.plain-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .75rem; }
+
+.contact { margin-top: clamp(3rem, 7vw, 5rem); background: var(--ink); color: var(--bg); padding: clamp(3rem, 8vw, 6rem) 0; }
+.contact-inner { display: flex; flex-direction: column; gap: 1.5rem; }
+.contact-title { font-family: var(--display); font-weight: 800; font-size: clamp(2.1rem, 5.5vw, 4.2rem); letter-spacing: -0.04em; line-height: .98; max-width: 16ch; }
+.contact-email { font-family: var(--display); font-weight: 600; font-size: clamp(1.15rem, 3vw, 1.9rem); color: var(--bg); text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 2px; overflow-wrap: anywhere; }
+.contact-email:hover { color: var(--bg); text-decoration-thickness: 4px; }
+.contact .btn-primary { background: var(--bg); color: var(--ink); }
+.contact .btn-primary:hover { background: var(--surface); color: var(--ink); }
+.contact .btn-ghost { color: var(--bg); border-color: var(--muted); }
+.contact .btn-ghost:hover { border-color: var(--bg); color: var(--bg); }
+.contact :focus-visible { outline-color: var(--bg); }
+.contact-note { color: var(--bg); opacity: .8; }
+
+.footer { padding-top: 1.5rem; padding-bottom: 2rem; color: var(--muted); font-size: .9rem; display: flex; flex-direction: column; gap: .75rem; }
+.legal { display: flex; flex-direction: column; gap: .25rem; max-width: 46rem; }
+.legal summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-weight: 600; color: var(--ink); }
+.legal p { padding-bottom: .75rem; }
+
+/* Skeleton loaders */
+.space-stage.is-loading::before { content: ""; position: absolute; inset: 1.5rem; background: var(--sk); border-radius: var(--radius); animation: sk-pulse 1.4s ease-in-out infinite; }
+.sk { min-height: 100vh; }
+.sk-bar { height: 65px; border-bottom: 1px solid var(--line); }
+.sk-hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 4rem); padding-top: clamp(2.5rem, 6vw, 5rem); }
+@media (max-width: 960px) { .sk-hero { grid-template-columns: minmax(0, 1fr); } }
+.sk-col { display: flex; flex-direction: column; gap: 1rem; }
+.sk-line, .sk-panel { background: var(--sk); border-radius: 2px; animation: sk-pulse 1.4s ease-in-out infinite; }
+.sk-line { height: 1rem; }
+.sk-line.h-xl { height: clamp(3rem, 7vw, 5.4rem); }
+.sk-panel { height: clamp(420px, 60vw, 640px); border-radius: var(--radius); }
+.w40 { width: 40%; } .w50 { width: 50%; } .w60 { width: 60%; } .w80 { width: 80%; } .w90 { width: 90%; }
+@keyframes sk-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+@media (prefers-reduced-motion: reduce) { .sk-line, .sk-panel, .space-stage.is-loading::before { animation: none; } }
+
+</style>
+</head>
 <body>
-  <app-root></app-root>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="assets/js/core/popper.min.js"></script>
-  <script src="assets/js/core/bootstrap.min.js"></script>
-  <script src="assets/js/now-ui-kit.js?v=1.3.0"></script>
-  <script src="assets/js/aos.js"></script>
-  <script src="assets/js/main.js"></script>
-<script src="runtime.e227d1a0e31cbccbf8ec.js" defer></script><script src="polyfills.a4021de53358bb0fec14.js" defer></script><script src="main.56d995f6284f23ccff39.js" defer></script></body>
+<div id="root"><div class="sk" aria-busy="true" aria-label="Loading portfolio"><div class="sk-bar"></div><div class="wrap sk-hero"><div class="sk-col"><div class="sk-line h-xl w60"></div><div class="sk-line h-xl w50"></div><div class="sk-line w40"></div><div class="sk-line w90"></div><div class="sk-line w80"></div></div><div class="sk-panel"></div></div></div></div>
+<noscript><p style="padding:2rem">Shashank Kapoor, AI Full Stack Developer. Email kapoorshashank02@gmail.com or call +91 89890 97809.</p></noscript>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const{useState,useEffect,useRef,useMemo}=React,EMAIL="kapoorshashank02@gmail.com",PHONE_DISPLAY="+91 89890 97809",PHONE_TEL="+918989097809",GITHUB="https://github.com/kapoorshashank",CLUSTERS=[{id:"ai",name:"AI and LLM engineering",center:[-1.75,.6,.15]},{id:"fe",name:"Frontend",center:[1.8,.7,-.35]},{id:"be",name:"Backend and data",center:[.8,-1.5,.55]},{id:"tl",name:"AI-assisted tooling",center:[-1.2,-1.55,-.8]}],HERE="HERE Technologies",PS="Publicis Sapient (Verizon)",LTI="L&T Infotech (Travelers)",SKILLS=[{n:"AI agents",c:"ai",t:"agents agentic autonomous tools",d:"Agents and agentic workflows built with LangGraph and MCP."},{n:"Agentic workflows",c:"ai",t:"agents agentic workflow orchestration langgraph",d:"Task-oriented, multi-step AI workflows."},{n:"LangGraph",c:"ai",t:"agents agentic langgraph orchestration graph",d:"Stateful agent graphs and control flow."},{n:"MCP",c:"ai",t:"agents mcp model context protocol tools integration",d:"Model Context Protocol for connecting models to tools and data."},{n:"LangChain",c:"ai",t:"rag langchain orchestration llm agents python",d:"LLM orchestration, RAG, agents, tool calling and retrieval workflows."},{n:"RAG",c:"ai",t:"rag retrieval search knowledge context",d:"Retrieval-augmented generation with LangChain-based orchestration."},{n:"Embeddings",c:"ai",t:"rag embeddings vectors semantic search retrieval",d:"Embedding pipelines for semantic retrieval."},{n:"Vector databases",c:"ai",t:"rag vector database search retrieval",d:"Vector stores behind retrieval workflows."},{n:"Tool calling",c:"ai",t:"agents tools function calling api",d:"Tool and function calling for task-oriented AI workflows."},{n:"Prompt engineering",c:"ai",t:"prompt llm context genai ai-assisted",d:"Prompt design and context improvements."},{n:"LLM applications",c:"ai",t:"llm genai generative applications enterprise fullstack",d:"Built HERE Code Assistant, an LLM-powered developer assistant.",w:HERE},{n:"AI evaluation",c:"ai",t:"evaluation evals quality llm agents",d:"Evaluating model and agent output quality."},{n:"Python",c:"ai",t:"python backend automation api llm langchain fullstack",d:"AI/LLM apps, backend services, automation and API integrations.",w:HERE},{n:"React",c:"fe",t:"react frontend hooks redux ui fullstack",d:"Hooks, Context API, Redux, function and class components.",w:`${HERE}, ${PS}, ${LTI}`},{n:"Angular",c:"fe",t:"angular frontend rxjs ngrx ui fullstack",d:"RxJS, reactive forms, NgRx, Angular Material, route guards, HTTP interceptors.",w:`${HERE}, ${PS}, ${LTI}`},{n:"Vue.js",c:"fe",t:"vue frontend ui",d:"Frontend development on the HERE Platform portal.",w:HERE},{n:"TypeScript",c:"fe",t:"typescript frontend types fullstack",d:"Generics, decorators, type inference, access modifiers."},{n:"JavaScript ES6+",c:"fe",t:"javascript es6 async frontend fullstack",d:"Promises, async/await, the event loop, modern syntax."},{n:"Redux",c:"fe",t:"redux react state frontend",d:"State management for React apps."},{n:"NgRx",c:"fe",t:"ngrx angular state frontend",d:"State management for Angular apps."},{n:"RxJS",c:"fe",t:"rxjs angular reactive frontend",d:"Reactive streams in Angular."},{n:"Micro-frontends",c:"fe",t:"microfrontend micro-frontends architecture enterprise frontend",d:"Splitting large portals into independently shipped apps."},{n:"Module federation",c:"fe",t:"module federation microfrontend architecture frontend",d:"Runtime code sharing between micro-frontends."},{n:"Jest + RTL",c:"fe",t:"testing jest react frontend quality",d:"Unit testing with Jest and React Testing Library."},{n:"Node.js",c:"be",t:"node backend api fullstack javascript",d:"JWT, Passport, Google sign-up, Axios, Winston logging, error handling.",w:`${HERE}, ${PS}, ${LTI}`},{n:"Express.js",c:"be",t:"express backend api middleware fullstack",d:"Middleware, HTTP calls, file upload.",w:LTI},{n:"API integrations",c:"be",t:"api rest backend integration fullstack tools",d:"Building and integrating service APIs."},{n:"Auth (JWT, Passport)",c:"be",t:"auth jwt passport security backend",d:"JWT, Passport local strategy and Google sign-up."},{n:"Security practices",c:"be",t:"security backend auth",d:"Secure Node.js services and error handling."},{n:"MS SQL",c:"be",t:"sql database backend data fullstack",d:"Relational data for insurance workflows.",w:LTI},{n:"GitHub Copilot",c:"tl",t:"ai-assisted copilot coding tools",d:"AI-assisted coding, generation and debugging."},{n:"Claude",c:"tl",t:"ai-assisted claude coding tools agents llm",d:"AI-assisted development and agent creation."},{n:"Kiro",c:"tl",t:"ai-assisted kiro coding tools agents",d:"AI-assisted development workflows.",w:HERE},{n:"GitLab",c:"tl",t:"gitlab tools version control",d:"Version control and delivery.",w:`${HERE}, ${PS}`},{n:"Jira and Rally",c:"tl",t:"jira rally tools agile scrum",d:"Agile delivery, grooming and scrum.",w:`${HERE}, ${PS}, ${LTI}`},{n:"Postman",c:"tl",t:"postman tools api testing",d:"API testing and debugging."}],CHIPS=[{label:"AI agents",q:"agents agentic langgraph mcp tools"},{label:"RAG and retrieval",q:"rag retrieval embeddings vector"},{label:"Enterprise frontend",q:"react angular vue microfrontend architecture"},{label:"Full-stack delivery",q:"fullstack node express api sql"},{label:"AI-assisted engineering",q:"ai-assisted copilot claude kiro prompt"}],CROSS_LINKS=[["Python","API integrations"],["React","Node.js"],["TypeScript","Node.js"],["Claude","Prompt engineering"],["Kiro","AI agents"],["LLM applications","Node.js"],["Postman","API integrations"],["Tool calling","API integrations"]],JOBS=[{when:"Aug 2022 to present",company:"HERE Technologies",role:"Senior Software Engineer",title:"Senior AI Full Stack Developer, HERE Platform portal",highlight:{name:"HERE Code Assistant",text:"An AI-powered developer assistant that brings LLM capabilities into enterprise software development workflows."},summary:"The HERE Platform portal is the hub where developers and businesses reach maps, geospatial data, APIs and SDKs to build location-aware applications. I develop and deploy end-to-end features across it.",points:["Work with product managers, program managers and QA to find problems and choose solutions.","Take part in code reviews, grooming, refinement and scrum.","Resolve production issues alongside the support team."],stack:["Angular","React","Vue.js","Node.js","Python","Kiro","GitLab"],team:"10-person dev team"},{when:"May 2021 to Aug 2022",company:"Publicis Sapient",role:"Associate Technology, Level 2",title:"Full Stack Developer, Verizon eBilling Static",summary:"End-to-end development of Verizon's eBilling Static application, which lets company and Linkset users view and edit billing information according to their role, with charts, email and save-to-PDF.",points:["Worked with product, program management and QA on problems, testing and solutions.","Supported production issue resolution with the support team."],stack:["Angular 11/12","React 16","Node.js","GitLab","Jira"],award:"Core values award: embracing the future and partnering for client impact"},{when:"May 2018 to May 2021",company:"L&T Infotech",role:"Software Engineer",title:"Full Stack Developer, Travelers Book Transfer",summary:"Built the Book Transfer application for Travelers Personal Insurance, which lets agents, sales executives and managers change policies for insured customers, with file upload, email notifications and Excel support.",points:["Developed full-stack web applications that process, analyze and visualize data.","Designed and built applications on the MEAN and MERN stacks."],stack:["Angular","React","Node.js","Express.js","MS SQL","Rally"],team:"6-person dev team",award:"Pat on the Back award, 2020"}],ROLES=["Forward Deployed Engineer","AI Engineer","Applied AI Engineer","AI Solutions Engineer","Senior Full Stack Engineer"];function search(l){const t=l.toLowerCase().split(/[^a-z0-9+.#-]+/).filter(i=>i.length>1);return t.length?SKILLS.map((i,h)=>{const u=i.n.toLowerCase(),s=u+" "+i.t;let o=0;return t.forEach(r=>{s.includes(r)&&(o+=u.includes(r)?2:1)}),{i:h,score:o}}).filter(i=>i.score>0).sort((i,h)=>h.score-i.score).slice(0,8):[]}function mulberry32(l){return function(){l|=0,l=l+1831565813|0;let t=Math.imul(l^l>>>15,1|l);return t=t+Math.imul(t^t>>>7,61|t)^t,((t^t>>>14)>>>0)/4294967296}}function buildLayout(){const l=mulberry32(42),t=new Array(SKILLS.length);CLUSTERS.forEach(s=>{const o=SKILLS.map((a,S)=>a.c===s.id?S:-1).filter(a=>a>=0),r=o.length,e=.55+r*.035;o.forEach((a,S)=>{const c=1-2*(S+.5)/r,p=Math.sqrt(1-c*c),b=S*2.399963,A=()=>(l()-.5)*.22;t[a]=[s.center[0]+Math.cos(b)*p*e+A(),s.center[1]+c*e*.85+A(),s.center[2]+Math.sin(b)*p*e+A()]})});const i=new Set,h=(s,o)=>Math.hypot(t[s][0]-t[o][0],t[s][1]-t[o][1],t[s][2]-t[o][2]);SKILLS.forEach((s,o)=>{SKILLS.map((r,e)=>({k:e,d:r.c===s.c&&e!==o?h(o,e):1/0})).sort((r,e)=>r.d-e.d).slice(0,2).forEach(({k:r,d:e})=>{e<1/0&&i.add(o<r?`${o}-${r}`:`${r}-${o}`)})});const u=s=>SKILLS.findIndex(o=>o.n===s);return CROSS_LINKS.forEach(([s,o])=>{const r=u(s),e=u(o);r>=0&&e>=0&&i.add(r<e?`${r}-${e}`:`${e}-${r}`)}),{pos:t,edges:[...i].map(s=>s.split("-").map(Number))}}const LAYOUT=buildLayout();function readVar(l){try{return getComputedStyle(document.documentElement).getPropertyValue(l).trim()||"#888888"}catch{return"#888888"}}function SkillSpace({matches:l,onPick:t}){const i=useRef(null),h=useRef([]),u=useRef([]),s=useRef({matches:new Set,order:[]}),o=useRef(t),[r,e]=useState(!1),[a,S]=useState(!1);return o.current=t,useEffect(()=>{s.current.matches=new Set(l.map(c=>c.i)),s.current.order=l.map(c=>c.i)},[l]),useEffect(()=>{const c=i.current;if(!c||typeof THREE=="undefined"){e(!0);return}let p;try{p=new THREE.WebGLRenderer({antialias:!0,alpha:!0})}catch{e(!0);return}p.setPixelRatio(Math.min(window.devicePixelRatio||1,2)),p.domElement.className="space-gl",p.domElement.setAttribute("aria-hidden","true"),c.appendChild(p.domElement);const b=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches,A=new THREE.Scene,E=new THREE.PerspectiveCamera(40,1,.1,100);E.position.set(0,0,7.4);const f=new THREE.Group;f.rotation.x=.12,A.add(f);const me={ai:new THREE.SphereGeometry(.08,20,16),fe:new THREE.BoxGeometry(.13,.13,.13),be:new THREE.TetrahedronGeometry(.11,0),tl:new THREE.OctahedronGeometry(.1,0)},x=SKILLS.map((n,d)=>{const m=new THREE.MeshBasicMaterial({transparent:!0,opacity:1}),y=new THREE.Mesh(me[n.c],m);return y.position.set(...LAYOUT.pos[d]),y.userData.i=d,f.add(y),y}),O=[];LAYOUT.edges.forEach(([n,d])=>O.push(...LAYOUT.pos[n],...LAYOUT.pos[d]));const J=new THREE.BufferGeometry;J.setAttribute("position",new THREE.Float32BufferAttribute(O,3));const I=new THREE.LineBasicMaterial({transparent:!0,opacity:.55});f.add(new THREE.LineSegments(J,I));const K=new THREE.MeshBasicMaterial,k=new THREE.Mesh(new THREE.SphereGeometry(.06,16,12),K);k.scale.setScalar(.001),f.add(k);const q=new THREE.Mesh(new THREE.RingGeometry(.2,.225,48),new THREE.MeshBasicMaterial({transparent:!0,opacity:.6,side:THREE.DoubleSide}));k.add(q);const U=new Float32Array(SKILLS.length*6),H=new THREE.BufferGeometry;H.setAttribute("position",new THREE.BufferAttribute(U,3));const Y=new THREE.LineBasicMaterial({transparent:!0,opacity:.85}),X=new THREE.LineSegments(H,Y);f.add(X);const F=()=>{x.forEach((n,d)=>n.material.color.set(readVar("--k-"+SKILLS[d].c))),I.color.set(readVar("--edge")),K.color.set(readVar("--ink")),q.material.color.set(readVar("--ink")),Y.color.set(readVar("--ink"))};F();const L=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null,Q=()=>F();L&&L.addEventListener&&L.addEventListener("change",Q);const _=new MutationObserver(F);_.observe(document.documentElement,{attributes:!0,attributeFilter:["data-theme","class"]});let P=1,C=1;const Z=()=>{P=c.clientWidth||1,C=c.clientHeight||1,p.setSize(P,C,!1),E.aspect=P/C,E.position.z=E.aspect<.9?10:E.aspect<1.3?8.6:7.4,E.updateProjectionMatrix()};Z();const ee=new ResizeObserver(Z);ee.observe(c);const R=p.domElement,te=new THREE.Raycaster,B=new THREE.Vector2;let M=-1,w=null,j=.35,D=.12,z=0;const ae=(n,d)=>{const m=R.getBoundingClientRect();B.x=(n-m.left)/m.width*2-1,B.y=-((d-m.top)/m.height)*2+1,te.setFromCamera(B,E);const y=te.intersectObjects(x,!1);return y.length?y[0].object.userData.i:-1},ne=n=>{w={x:n.clientX,y:n.clientY,moved:0},z=performance.now()},se=n=>{if(w){const d=n.clientX-w.x,m=n.clientY-w.y;w.moved+=Math.abs(d)+Math.abs(m),j+=d*.008,n.pointerType==="mouse"&&(D=Math.max(-.7,Math.min(.7,D+m*.005))),w.x=n.clientX,w.y=n.clientY,z=performance.now()}else n.pointerType==="mouse"&&(M=ae(n.clientX,n.clientY),R.style.cursor=M>=0?"pointer":"grab")},oe=n=>{if(w&&w.moved<6){const d=ae(n.clientX,n.clientY);d>=0&&o.current&&o.current(d)}w=null},re=()=>{M=-1},ie=()=>{w=null};R.addEventListener("pointerdown",ne),window.addEventListener("pointermove",se),window.addEventListener("pointerup",oe),window.addEventListener("pointercancel",ie),R.addEventListener("pointerleave",re);const $=new THREE.Vector3,G=new THREE.Vector3,le=n=>($.copy(n).applyMatrix4(f.matrixWorld).project(E),{x:($.x*.5+.5)*P,y:(-$.y*.5+.5)*C,z:$.z}),ue=CLUSTERS.map(n=>new THREE.Vector3(n.center[0],n.center[1]+1.05,n.center[2]));let ce,de=!1;const pe=()=>{ce=requestAnimationFrame(pe);const n=performance.now();!b&&!w&&n-z>2500&&(j+=.0016),f.rotation.y+=(j-f.rotation.y)*.08,f.rotation.x+=(D-f.rotation.x)*.08,f.updateMatrixWorld();const d=s.current,m=d.matches.size>0,y=b?1:.14;x.forEach((g,v)=>{const N=d.matches.has(v)||M===v,T=g.scale.x+((N?1.75:1)-g.scale.x)*y;g.scale.setScalar(T);const W=m&&!N?.22:1;g.material.opacity+=(W-g.material.opacity)*y}),I.opacity+=((m?.22:.55)-I.opacity)*y,m&&(G.set(0,0,0),d.order.forEach(g=>G.add(x[g].position)),G.multiplyScalar(.62/d.order.length)),k.position.lerp(G,b?1:.08);const he=k.scale.x+((m?1:.001)-k.scale.x)*y;k.scale.setScalar(he),q.lookAt(E.position);let V=0;d.order.forEach(g=>{const v=x[g].position;U.set([k.position.x,k.position.y,k.position.z,v.x,v.y,v.z],V*6),V++}),H.setDrawRange(0,V*2),H.attributes.position.needsUpdate=!0,X.visible=m,x.forEach((g,v)=>{const N=h.current[v];if(!N)return;const T=le(g.position),W=(d.matches.has(v)||M===v)&&T.z<1;N.style.transform=`translate(${T.x.toFixed(1)}px, ${T.y.toFixed(1)}px) translate(-50%, -150%)`,N.style.opacity=W?"1":"0"}),ue.forEach((g,v)=>{const N=u.current[v];if(!N)return;const T=le(g);N.style.transform=`translate(${T.x.toFixed(1)}px, ${T.y.toFixed(1)}px) translate(-50%, -50%)`,N.style.opacity=m?"0.55":"1"}),p.render(A,E),de||(de=!0,S(!0))};return pe(),()=>{cancelAnimationFrame(ce),ee.disconnect(),_.disconnect(),L&&L.removeEventListener&&L.removeEventListener("change",Q),R.removeEventListener("pointerdown",ne),window.removeEventListener("pointermove",se),window.removeEventListener("pointerup",oe),window.removeEventListener("pointercancel",ie),R.removeEventListener("pointerleave",re),p.dispose(),R.parentNode&&R.parentNode.removeChild(R)}},[]),React.createElement("div",{className:a||r?"space-stage":"space-stage is-loading","aria-busy":!a&&!r,ref:i,role:"img","aria-label":"A 3D map of Shashank's skills grouped into AI, frontend, backend and tooling clusters. The ranked list below it holds the same information."},r&&React.createElement("p",{className:"space-fallback"},"The 3D view needs WebGL. The ranked list below shows the same results."),React.createElement("div",{className:"space-labels","aria-hidden":"true"},CLUSTERS.map((c,p)=>React.createElement("span",{key:c.id,ref:b=>u.current[p]=b,className:`cluster-label c-${c.id}`},c.name)),SKILLS.map((c,p)=>React.createElement("span",{key:c.n,ref:b=>h.current[p]=b,className:`node-label c-${c.c}`},c.n))))}function CopyEmail({className:l}){const[t,i]=useState(!1),h=async()=>{try{await navigator.clipboard.writeText(EMAIL),i(!0)}catch{window.prompt("Copy this email address:",EMAIL)}};return useEffect(()=>{if(!t)return;const u=setTimeout(()=>i(!1),2200);return()=>clearTimeout(u)},[t]),React.createElement("button",{type:"button",className:l,onClick:h,"aria-live":"polite"},t?"Email copied":"Copy email")}function App(){const[l,t]=useState(0),[i,h]=useState(""),u=i.trim()?i:l>=0?CHIPS[l].q:"",s=useMemo(()=>search(u),[u]),o=e=>{t(-1),h(SKILLS[e].n)},r=e=>CLUSTERS.find(a=>a.id===e).name;return React.createElement(React.Fragment,null,React.createElement("a",{className:"skip",href:"#main"},"Skip to content"),React.createElement("header",{className:"topbar"},React.createElement("div",{className:"wrap topbar-inner"},React.createElement("a",{href:"#top",className:"wordmark"},"Shashank Kapoor"),React.createElement("nav",{"aria-label":"Sections",className:"nav"},React.createElement("a",{href:"#work"},"Work"),React.createElement("a",{href:"#skills"},"Skills"),React.createElement("a",{href:"#contact"},"Contact")),React.createElement("a",{className:"btn btn-primary btn-small",href:`mailto:${EMAIL}`},"Email me"))),React.createElement("main",{id:"main"},React.createElement("section",{className:"wrap hero",id:"top"},React.createElement("div",{className:"hero-copy"},React.createElement("h1",{className:"name"},"Shashank",React.createElement("br",null),"Kapoor"),React.createElement("p",{className:"role"},"AI Full Stack Developer"),React.createElement("div",{className:"lede-hl"},[{k:"ai",label:"AI engineering",items:["AI agents","Agentic workflows","RAG pipelines","LangGraph","LangChain","MCP","Tool calling","Vector search","LLM applications"]},{k:"fs",label:"Full stack",items:["React","Angular","TypeScript","Node.js","Python","REST APIs","Micro-frontends"]}].map(g=>React.createElement("div",{key:g.k},React.createElement("p",{className:"hl-label"},g.label),React.createElement("ul",{className:`hl-tags hl-${g.k}`},g.items.map(x=>React.createElement("li",{key:x},x)))))),React.createElement("div",{className:"cta-row"},React.createElement("a",{className:"btn btn-primary",href:`mailto:${EMAIL}`},"Email me"),React.createElement("a",{className:"btn btn-ghost",href:`tel:${PHONE_TEL}`},"Call ",PHONE_DISPLAY)),React.createElement("div",{className:"open-to"},React.createElement("h2",{className:"open-title"},"Roles I'm looking for"),React.createElement("ul",{className:"role-list"},ROLES.map(e=>React.createElement("li",{key:e},e))))),React.createElement("div",{className:"space","aria-labelledby":"space-title"},React.createElement("div",{className:"space-head"},React.createElement("h2",{id:"space-title",className:"space-title"},"Search my skills like a vector store"),React.createElement("p",{className:"space-sub"},"Each point is a skill, grouped by what it's near. Pick a query and the closest skills light up. Drag to turn the map, tap a point to search from it.")),React.createElement(SkillSpace,{matches:s,onPick:o}),React.createElement("div",{className:"space-query"},React.createElement("label",{htmlFor:"skill-q",className:"q-label"},"Query"),React.createElement("input",{id:"skill-q",type:"search",value:i,placeholder:"Try \u201Cvector search\u201D, \u201CAngular\u201D or \u201Cagents\u201D",onChange:e=>{h(e.target.value),e.target.value&&t(-1)},autoComplete:"off"}),React.createElement("div",{className:"chips",role:"group","aria-label":"Example queries"},CHIPS.map((e,a)=>React.createElement("button",{key:e.label,type:"button",className:"chip","aria-pressed":l===a&&!i,onClick:()=>{h(""),t(a)}},e.label)))),React.createElement("div",{className:"results","aria-live":"polite"},s.length===0?React.createElement("p",{className:"empty"},"No close matches for \u201C",u,"\u201D. Try RAG, React, Node.js or agents."):React.createElement("ol",{className:"result-list"},s.map(({i:e})=>{const a=SKILLS[e];return React.createElement("li",{key:a.n,className:"result"},React.createElement("span",{className:`dot c-${a.c}`,"aria-hidden":"true"}),React.createElement("div",null,React.createElement("p",{className:"r-name"},a.n,React.createElement("span",{className:"r-cluster"},r(a.c))),React.createElement("p",{className:"r-desc"},a.d),a.w&&React.createElement("p",{className:"r-where"},"Used at ",a.w)))}))))),React.createElement("section",{className:"wrap section",id:"work","aria-labelledby":"work-title"},React.createElement("h2",{className:"section-title",id:"work-title"},"Work"),React.createElement("ol",{className:"timeline"},JOBS.map(e=>React.createElement("li",{className:"job",key:e.company},React.createElement("div",{className:"job-meta"},React.createElement("p",{className:"job-when"},e.when),React.createElement("p",{className:"job-company"},e.company),e.team&&React.createElement("p",{className:"job-team"},e.team)),React.createElement("div",{className:"job-body"},React.createElement("h3",{className:"job-role"},e.role),React.createElement("p",{className:"job-title"},e.title),e.highlight&&React.createElement("div",{className:"feature"},React.createElement("p",{className:"feature-name"},e.highlight.name),React.createElement("p",{className:"feature-text"},e.highlight.text)),React.createElement("p",{className:"job-summary"},e.summary),React.createElement("ul",{className:"job-points"},e.points.map(a=>React.createElement("li",{key:a},a))),React.createElement("ul",{className:"tags","aria-label":"Stack"},e.stack.map(a=>React.createElement("li",{key:a},a))),e.award&&React.createElement("p",{className:"award"},e.award)))))),React.createElement("section",{className:"wrap section",id:"skills","aria-labelledby":"skills-title"},React.createElement("h2",{className:"section-title",id:"skills-title"},"Skills"),React.createElement("div",{className:"skill-grid"},CLUSTERS.map(e=>React.createElement("div",{className:"skill-col",key:e.id},React.createElement("h3",{className:`skill-head c-${e.id}`},React.createElement("span",{className:`dot c-${e.id}`,"aria-hidden":"true"}),e.name),React.createElement("ul",{className:"skill-list"},SKILLS.filter(a=>a.c===e.id).map(a=>React.createElement("li",{key:a.n},React.createElement("strong",null,a.n),React.createElement("span",null,a.d)))))))),React.createElement("section",{className:"wrap section two-col","aria-label":"Education and recognition"},React.createElement("div",null,React.createElement("h2",{className:"section-title"},"Education"),React.createElement("p",{className:"edu-degree"},"Bachelor of Engineering, Electronics and Communications"),React.createElement("p",{className:"edu-meta"},"LNCT, RGPV University, 2014 to 2018. Scored 82.9%.")),React.createElement("div",null,React.createElement("h2",{className:"section-title"},"Recognition"),React.createElement("ul",{className:"plain-list"},React.createElement("li",null,React.createElement("strong",null,"Core values award, Publicis Sapient.")," For embracing the future and partnering for client impact."),React.createElement("li",null,React.createElement("strong",null,"Pat on the Back award, L&T Infotech, 2020."))))),React.createElement("section",{className:"contact",id:"contact","aria-labelledby":"contact-title"},React.createElement("div",{className:"wrap contact-inner"},React.createElement("h2",{className:"contact-title",id:"contact-title"},"Hiring for an AI or full-stack role? Let's talk."),React.createElement("a",{className:"contact-email",href:`mailto:${EMAIL}`},EMAIL),React.createElement("div",{className:"cta-row"},React.createElement("a",{className:"btn btn-primary",href:`mailto:${EMAIL}`},"Email me"),React.createElement("a",{className:"btn btn-ghost",href:`tel:${PHONE_TEL}`},"Call ",PHONE_DISPLAY),React.createElement(CopyEmail,{className:"btn btn-ghost"}),React.createElement("a",{className:"btn btn-ghost",href:GITHUB,target:"_blank",rel:"noopener noreferrer"},"GitHub")),React.createElement("p",{className:"contact-note"},"Speaks English and Hindi. Open to Forward Deployed, Applied AI and Senior Full Stack roles.")))),React.createElement("footer",{className:"wrap footer"},React.createElement("p",null,"Shashank Kapoor, AI Full Stack Developer. Built with React and Three.js."),React.createElement("div",{className:"legal"},React.createElement("details",null,React.createElement("summary",null,"Privacy policy"),React.createElement("p",null,"This site sets no cookies, runs no analytics and has no forms or sign-ups, so it collects and stores nothing about you. Fonts load from Google Fonts and code libraries from cdnjs, which receive your IP address as part of any normal web request. My email and phone number are listed so recruiters can contact me directly.")),React.createElement("details",null,React.createElement("summary",null,"Terms of use"),React.createElement("p",null,"This page describes my own work and is shared for hiring and information purposes. Company and client names belong to their owners and appear only to describe my employment history. Please ask before republishing any of the content.")))))}ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App,null));
+
+</script>
+</body>
 </html>
